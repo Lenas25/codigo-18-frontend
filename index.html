@@ -3,45 +3,333 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/icon.png">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>Lena Suarez | Junior Software Developer</title>
   </head>
   <body>
-    <nav>
-      <div>Logo</div>
-      <div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Career</a></li>
-          <li><a href="#">Recomendations</a></li>
-          <li><a href="#">Contact Me</a></li>
-        </ul>
-      </div>
-    </nav>
-    <main>
-      <div>
-        <p>👌Saludos!</p>
-        <h1>Lena Suarez</h1>
-        <p>Junior Software Developer</p>
-        <div class="socials">
-          <a href="">Linkedin</a>
-          <a href="">Github</a>
-          <a href="">Instagram</a>
+    <div class="menu flex">
+      <nav>
+        <div class="logo flex row">
+          <img src="./images/icon.png" alt="">
+          LenaDev
         </div>
+        <div class="nav">
+          <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#career">Career</a></li>
+            <li><a href="#reviews">Recomendations</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container margin-prin">
+      <header>
+        <div class="hero flex">
+          <span class="greeting">🤍 Welcome!</span>
+          <h1 class="title">
+            Lena <br />
+            Suarez
+          </h1>
+          <p class="career">Junior Software Developer</p>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/elena-s-080397218/"
+              target="_blank">
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="https://github.com/Lenas25" target="_blank"
+              ><i class="bx bxl-github"></i
+            ></a>
+            <a href="https://www.instagram.com/_lenasp/" target="_blank"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="img-prin">
+          <img
+            src="./images/avatar.png"
+            alt="Avatar de Lena" />
+        </div>
+
+        <div class="contact-info flex">
+          <a href="files/CV Elena Suárez .pdf" target="_blank"
+            >Lena CV <i class="bx bxs-download"></i
+          ></a>
+          <a href="" class="flex row"><i class="bx bxl-whatsapp"></i> Let's talk</a>
+        </div>
+      </header>
+
+      <section class="extra-info">
+        <div class="experience">
+          <div class="experience-card">
+            <div class="flex">
+              <i class="bx bx-code-alt"></i>
+              <p>2 year as</p>
+              <h3>Programmer</h3>
+            </div>
+            <div class="flex">
+              <i class="bx bx-network-chart"></i>
+              <p>1 year of</p>
+              <h3>Works</h3>
+            </div>
+            <div class="flex">
+              <i class='bx bx-desktop'></i>
+              <p>4 years as</p>
+              <h3>designer</h3>
+            </div>
+          </div>
+
+          <div class="experience-description flex row">
+            <div>
+              <p>Developer</p>
+              <h3>FullStack</h3>
+            </div>
+            <div>
+              <p>Thousands of projects</p>
+              <h3>Experiences</h3>
+            </div>
+            <div>
+              <p>Designer Freelance</p>
+              <h3>UI|UX</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="aboutme padding-section" id="about-me">
+        <img src="./images/photo.webp" alt="Foto de perfil" />
+
+        <div class="aboutme-info flex">
+          <span>👩‍💻 About Me</span>
+          <h2 class="subtitle" style="margin: 0">
+            Elena Ariana <br />
+            Suarez Paredes
+          </h2>
+          <p>
+            💻 My name is Elena Suarez Paredes, I am from Lima, Peru, I am a
+            junior software developer, I studied Software Engineering at
+            Univeridad Tecnologica del Peru.
+          </p>
+          <p>
+            🌱 I am passionate about learning new technologies and programming
+            languages, I am currently learning HTML, CSS and JS.
+          </p>
+          <p>
+            📚 I am also interested in learning about artificial intelligence
+            and machine learning.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects" class="project flex padding-section">
+        <div class="project-head flex row">
+          <div class="project-title">
+            <span>🔗 Portfolio</span>
+            <h2 class="subtitle">Projects</h2>
+          </div>
+
+          <ul class="flex row">
+            <li><a href="#">Web</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Design</a></li>
+          </ul>
+        </div>
+
+        <div class="project-cards flex row">
+          <div class="project-card flex">
+            <h3>Project 1</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              vehicula, nisl nec tincidunt.
+            </p>
+            <div class="languages flex row">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+            <img src="" alt="Proyecto 1" />
+          </div>
+
+          <div class="project-card flex">
+            <h3>Project 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              vehicula, nisl nec tincidunt.
+            </p>
+            <div class="languages flex row">
+              <span>Typescrit</span>
+              <span>React JS</span>
+            </div>
+            <img src="" alt="Proyecto 1" />
+          </div>
+        </div>
+
+        <div class="more flex">
+          <a href="#" class="flex row"
+            ><i class="bx bxl-github"></i> See more projects
+            <i class="bx bx-right-arrow-alt"></i
+          ></a>
+        </div>
+      </section>
+
+      <section class="skills flex padding-section" id="skills">
+        <div class="skills-head">
+          <span>💼 Skills - Experiences</span>
+          <h2 class="subtitle">Technologies and Skills</h2>
+        </div>
+
+        <div class="tech">
+          <p>Technologies use to make projects and day by day</p>
+          <div class="lg flex">
+            <i class="bx bxl-postgresql"></i>
+            <i class="bx bxl-html5"></i>
+            <i class="bx bxl-css3"></i>
+            <i class="bx bxl-tailwind-css"></i>
+            <i class="bx bxl-java"></i>
+            <i class="bx bxl-javascript"></i>
+            <i class="bx bxl-react"></i>
+            <i class="bx bxl-nodejs"></i>
+            <i class="bx bxl-git"></i>
+            <i class="bx bxl-figma"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex padding-section">
+        <div class="work-head">
+          <span>💼 Carreer</span>
+          <h2>Academic and Profesional Career</h2>
+        </div>
+
+        <div class="work-info">
+          <div class="profesional">
+            <h3>Profesional</h3>
+            <p></p>
+            <div class="work-card">
+              <h4></h4>
+              <p></p>
+              <div class="work-date">
+                <span class="time"></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="academic">
+            <h3>Academic</h3>
+            <p></p>
+            <div class="work-card">
+              <h4></h4>
+              <p></p>
+              <div class="work-date">
+                <span class="time"></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex padding-section">
+        <div class="review-head">
+          <div class="review-title">
+            <span>📝 Recommendations</span>
+            <h2>Reviews</h2>
+          </div>
+          <div class="arrows">
+            <a href=""><i class="bx bx-chevron-left"></i></a>
+            <a href=""><i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <div class="recomendations-cards">
+          <div class="review-card">
+            <i class="bx bxs-quote-left bx-rotate-180"></i>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              vehicula, nisl nec tincidunt.
+            </p>
+            <div class="review-person">
+              <img src="" alt="Persona 1" />
+              <div>
+                <h4>Persona 1</h4>
+                <p>CEO at Company</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <i class="bx bxs-quote-left bx-rotate-180"></i>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              vehicula, nisl nec tincidunt.
+            </p>
+            <div class="review-person">
+              <img src="" alt="Persona 1" />
+              <div>
+                <h4>Persona 2</h4>
+                <p>CEO at Company</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <i class="bx bxs-quote-left bx-rotate-180"></i>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              vehicula, nisl nec tincidunt.
+            </p>
+            <div class="review-person">
+              <img src="" alt="Persona 1" />
+              <div>
+                <h4>Persona 3</h4>
+                <p>CEO at Company</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flex padding-section">
+        <div class="contact-head">
+          <span>📬 Contact Me</span>
+          <h2 class="subtitle">Lets talk!</h2>
+        </div>
+
+        <div class="contact-ways">
+          <a href=""> <i class="bx bxl-whatsapp"></i> Send me a message </a>
+          <div class="mail">
+            <a href="">
+              <i class="bx bx-mail-send"></i>
+            </a>
+            <h4>E-mail:</h4>
+            <p>easp0104@gmail.com</p>
+            <i class="bx bx-copy"></i>
+          </div>
+        </div>
+      </section>
+      <div class="to-top flex padding-section">
+        <a href="" class="flex row">Back to top <i class="bx bx-up-arrow-alt"></i></a>
       </div>
-      <div>
-        <img src="" alt="Foto de perfil Lena">
-      </div>
-      <div>
-        <p>
-            <a href="">Download CV</a>
-        </p>
-        <p>
-            <a href="">Let's talk</a>
-        </p>
-      </div>
-    </main>
+      
+
+      <footer class="footer flex row">
+        <p>Copyrigth © Lena Suarez - 2021</p>
+        <div class="socials flex row">
+          <a href="#" class="flex"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="flex"><i class="bx bxl-github"></i></a>
+          <a href="#" class="flex"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
