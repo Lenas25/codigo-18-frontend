@@ -185,18 +185,20 @@ span{
   transition: all 0.3s ease-in;
 }
 
-.contact-info a:hover{
+.contact-info a:hover, .wsp:hover{
   color: rgba(255, 255, 255, 0.668);
 }
 
-.contact-info>a:last-child{
+.wsp{
+  color:var(--span);
+  text-decoration: none;
   gap:10px;
   border:1px solid var(--span);
   padding:5px 30px;
   border-radius: 20px;
 }
 
-.contact-info >a:last-child:hover{
+.wsp:hover{
   background-color: var(--span);
 }
 
@@ -318,6 +320,19 @@ span{
   margin-bottom: 3rem;
 }
 
+.project-subtitle{
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.project-subtitle>a{
+  font-size: 16px;
+  text-decoration:none;
+  color: white;
+}
+
 .project-card{
   border:1px solid var(--lines);
   width: 260px;
@@ -399,8 +414,44 @@ span{
   color: var(--span);
 }
 
+.contact{
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
 
+.contact-ways{
+  gap:2rem;
+}
 
+.mail{
+  padding:30px 50px;
+  font-size: 20px;
+}
+
+.mail i{
+  font-size: 30px;
+}
+
+.mail>a{
+  text-decoration: none;
+  color: white;
+  margin:20px auto;
+  width: 50px;
+  height: 50px;
+  border:solid;
+  padding: 10px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mail>a:last-child:hover{
+  background-color: var(--principal);
+  border:1px solid var(--principal);
+  color:var(--span);
+}
 
 .container>.to-top{
   padding:2rem 0;
@@ -415,18 +466,8 @@ span{
 }
 
 .container>.to-top>a:hover{
-  filter: drop-shadow(0px 0px 10px white);
+  text-shadow: 0px 0px 10px white;
   border-bottom: 1px solid white;
-  animation:line 0.5s ease-in;
-}
-
-@keyframes line {
-  from{
-    border:0px solid white;
-  }
-  to{
-    border-bottom:1px solid white;
-  }
 }
 
 footer.footer{
