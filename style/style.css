@@ -6,43 +6,43 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: "Poppins", sans-serif;
   background: black;
   color: white;
   overflow-x: hidden;
 }
 
-:root{
-  --principal:rgba(52, 39, 59, 0.705);
-  --span:rgb(152, 113, 152);
-  --lines:rgba(85, 50, 104, 0.705);
+:root {
+  --principal: rgba(52, 39, 59, 0.705);
+  --span: rgb(152, 113, 152);
+  --lines: rgba(85, 50, 104, 0.705);
 }
 
 /*Reused classes*/
-.flex{
+.flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
-.margin-prin{
+.margin-prin {
   margin: 0 10rem;
 }
 
-.subtitle{
-  margin-top:30px;
+.subtitle {
+  margin-top: 30px;
   font-size: 40px;
   font-weight: 800;
   line-height: 50px;
 }
 
-.padding-section{
+.padding-section {
   padding: 5rem 3rem;
 }
 
-.row{
+.row {
   flex-direction: row;
 }
 
@@ -54,8 +54,7 @@ body {
   min-width: 100vw;
 }
 
-
-.menu{
+.menu {
   width: 100%;
 }
 
@@ -63,23 +62,23 @@ nav {
   width: 85%;
   background-color: var(--principal);
   border-radius: 30px;
-  margin-top:2rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
-  gap:2rem;
+  gap: 2rem;
   align-items: center;
   padding: 1rem 3rem;
   text-align: center;
 }
 
-nav .logo{
-  gap:10px;
+nav .logo {
+  gap: 10px;
   color: white;
   text-decoration: none;
   font-weight: 600;
 }
 
-nav img{
+nav img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -91,33 +90,33 @@ nav img{
   list-style: none;
 }
 
-.nav-list > li > a{
+.nav-list > li > a {
   text-decoration: none;
-  padding:5px 10px;
+  padding: 5px 10px;
   color: rgb(255, 255, 255);
   transition: all 0.3s ease-in;
 }
 
 .nav-list > li > a:hover {
   border-bottom: 1px solid rgb(179, 158, 190);
-  color:rgb(179, 158, 190);
+  color: rgb(179, 158, 190);
 }
-header{
+header {
   height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:6rem 0 5rem;
-  gap:1rem;
+  padding: 6rem 0 5rem;
+  gap: 1rem;
 }
 
-header .hero{
+header .hero {
   align-items: flex-start;
   flex-direction: column;
-  gap:1rem;
+  gap: 1rem;
 }
 
-header .img-prin{
+header .img-prin {
   height: 100%;
   background-color: var(--principal);
   box-shadow: 0 0 20px 20px var(--principal);
@@ -125,45 +124,45 @@ header .img-prin{
   transition: all 0.5s ease-in;
 }
 
-header .img-prin:hover{
+header .img-prin:hover {
   transform: scale(1.1);
 }
 
-header .img-prin img{
+header .img-prin img {
   height: 100%;
   object-fit: cover;
 }
 
-span{
+span {
   font-weight: 600;
   background-color: var(--principal);
   padding: 0.5rem 1rem;
   width: fit-content;
   border-radius: 15px;
-  color:var(--span);
-  transition:all 0.3s ease-in;
+  color: var(--span);
+  transition: all 0.3s ease-in;
 }
 
-.title{
-  font-size:52px;
-  margin:10px 0 ;
+.title {
+  font-size: 52px;
+  margin: 10px 0;
   line-height: 65px;
 }
 
-.career{
-  font-size:20px;
+.career {
+  font-size: 20px;
   font-weight: 500;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   color: rgba(255, 255, 255, 0.762);
 }
 
-.social-links{
+.social-links {
   display: flex;
   gap: 1rem;
 }
 
-.social-links a{
-  border:1px solid white;
+.social-links a {
+  border: 1px solid white;
   padding: 10px;
   display: flex;
   border-radius: 50%;
@@ -173,46 +172,47 @@ span{
   transition: all 0.3s ease-in;
 }
 
-.social-links a:hover{
+.social-links a:hover {
   background-color: var(--principal);
   transform: scale(1.1);
   box-shadow: 0px 0px 10px 0px white;
 }
 
-.contact-info{
+.contact-info {
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
 }
 
-.contact-info>a{
-  color:var(--span);
+.contact-info > a {
+  color: var(--span);
   text-decoration: none;
   transition: all 0.3s ease-in;
 }
 
-.contact-info a:hover, .wsp:hover{
+.contact-info a:hover,
+.wsp:hover {
   color: rgba(255, 255, 255, 0.668);
 }
 
-.wsp{
-  color:var(--span);
+.wsp {
+  color: var(--span);
   text-decoration: none;
-  gap:10px;
-  border:1px solid var(--span);
-  padding:5px 30px;
+  gap: 10px;
+  border: 1px solid var(--span);
+  padding: 5px 30px;
   border-radius: 20px;
 }
 
-.wsp:hover{
+.wsp:hover {
   background-color: var(--span);
 }
 
-.experience{
+.experience {
   text-align: center;
   width: 100%;
-  border-top:1px solid var(--lines);
-  border-bottom:1px solid var(--lines);
+  border-top: 1px solid var(--lines);
+  border-bottom: 1px solid var(--lines);
   display: flex;
   flex-direction: column;
   padding: 10rem;
@@ -220,169 +220,169 @@ span{
   align-items: center;
 }
 
-.experience-card, .experience-description{
+.experience-card,
+.experience-description {
   text-align: center;
   display: flex;
   gap: 4rem;
   margin: 1rem 0;
 }
 
-.experience-card > div{ 
-  font-size:1.3rem;
+.experience-card > div {
+  font-size: 1.3rem;
   width: 250px;
   height: 200px;
-  border:2px solid var(--lines);
+  border: 2px solid var(--lines);
   border-radius: 20px;
   transition: all 0.3s ease-in;
 }
 
-.experience-card > div > i{
+.experience-card > div > i {
   font-size: 40px;
   color: var(--span);
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
-.experience-card > div:hover{
+.experience-card > div:hover {
   background-color: var(--principal);
-  border:var(--principal);
+  border: var(--principal);
 }
 
-.experience-description{
+.experience-description {
   width: 900px;
   background-color: var(--principal);
-  padding:1rem 2rem;
+  padding: 1rem 2rem;
   border-radius: 10px;
   justify-content: space-between;
 }
 
-.experience-description>div{
-  color:var(--span);
+.experience-description > div {
+  color: var(--span);
   width: 200px;
 }
 
-.experience-description>div>h3{
+.experience-description > div > h3 {
   font-size: 30px;
   font-weight: 600;
 }
 
-.aboutme{
+.aboutme {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
 }
 
-.aboutme img{
+.aboutme img {
   width: 500px;
   height: 500px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.aboutme-info{
+.aboutme-info {
   width: 50%;
   align-items: flex-start;
   gap: 1rem;
 }
 
-
-.project-head{
+.project-head {
   width: 100%;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom:50px;
+  margin-bottom: 50px;
 }
 
-.project-head>ul{
-  gap:20px;
+.project-head > ul {
+  gap: 20px;
   list-style: none;
 }
 
-.project-head>ul>li>a{
+.project-head > ul > li > a {
   font-size: 14px;
-  text-decoration:none;
+  text-decoration: none;
   color: var(--span);
   display: block;
-  border:1px solid var(--span);
-  padding:10px 20px;
+  border: 1px solid var(--span);
+  padding: 10px 20px;
   border-radius: 10px;
   transition: all 0.3s ease-in;
 }
 
-.project-head>ul>li>a:hover{
+.project-head > ul > li > a:hover {
   background-color: var(--principal);
   border: 1px solid var(--principal);
   color: white;
 }
 
-.project-cards{
+.project-cards {
   width: 100%;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap:2rem;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
-.project-subtitle{
+.project-subtitle {
   width: 100%;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.project-subtitle>a{
+.project-subtitle > a {
   font-size: 16px;
-  text-decoration:none;
+  text-decoration: none;
   color: white;
 }
 
-.project-card{
-  border:1px solid var(--lines);
+.project-card {
+  border: 1px solid var(--lines);
   width: 260px;
   height: 360px;
-  padding:20px;
+  padding: 20px;
   border-radius: 20px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap:10px;
+  gap: 10px;
   font-size: 14px;
   transition: all 0.3s ease-in;
 }
 
-.project-card:hover{
+.project-card:hover {
   background-color: var(--principal);
-  border:1px solid var(--principal);
+  border: 1px solid var(--principal);
 }
 
-.project-card>.languages{
-  gap:10px;
+.project-card > .languages {
+  gap: 10px;
   font-size: 12px;
-  margin-bottom:5px;
+  margin-bottom: 5px;
 }
 
-.project-card>.languages>span{
+.project-card > .languages > span {
   border-radius: 10px;
   background-color: rgba(59, 47, 71, 0.563);
-  color:rgb(155, 122, 225);
+  color: rgb(155, 122, 225);
 }
 
-.project-card>img{
+.project-card > img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.project> .more{
+.project > .more {
   width: 100%;
-  gap:30px;
+  gap: 30px;
 }
 
-.project> .more>a{
+.project > .more > a {
   width: fit-content;
-  border:1px solid rgb(132, 104, 152);
-  gap:10px;
-  padding:10px 20px;
+  border: 1px solid rgb(132, 104, 152);
+  gap: 10px;
+  padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
   color: rgb(132, 104, 152);
@@ -391,45 +391,147 @@ span{
   transition: all 0.3s ease-in;
 }
 
-.project> .more>a:hover{
+.project > .more > a:hover {
   opacity: 0.5;
 }
 
-.skills{
+.skills {
   justify-content: flex-start;
   text-align: center;
-  padding:10rem 0;
+  padding: 10rem 0;
 }
 
-.skills>.tech>p{
-  margin-top:50px;
-  margin-bottom:30px;
+.skills > .tech > p {
+  margin-top: 50px;
+  margin-bottom: 30px;
   font-size: 20px;
-  color:rgb(175, 169, 169);
+  color: rgb(175, 169, 169);
 }
 
-.skills>.tech>.lg{
+.skills > .tech > .lg {
   flex-wrap: wrap;
   flex-direction: row;
   font-size: 70px;
-  gap:10px;
+  gap: 10px;
   color: var(--span);
 }
 
-.reviews{
+.works {
+  text-align: center;
+}
+
+.work-info {
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 70px;
+  width: 100%;
+}
+
+.work-head {
+  gap: 10px;
+}
+
+.work-head > h3 {
+  font-size: 25px;
+  font-weight: 700;
+}
+.work-head > p {
+  font-size: 15px;
+  color: rgb(168, 165, 165);
+}
+
+.professional,
+.academic {
+  gap: 3rem;
+}
+
+.work-card {
+  border: 1px solid rgb(71, 36, 71);
+  width: 500px;
+  height: 200px;
+  padding: 25px;
+  border-radius: 20px;
+  gap: 10px;
+  font-size: 14px;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: start;
+  transition: all 0.5s ease-in;
+}
+
+.work-card:hover {
+  background-color: rgb(71, 36, 71);
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.work-card.now {
+  border: 1px solid rgb(203, 0, 203);
+}
+
+.work-card.now:hover{
+  background-color:rgba(203, 0, 203, 0.485);
+  border:1px solid black;
+}
+
+.work-card > span {
+  background-color: transparent;
+  color: rgb(141, 87, 141);
+  gap: 10px;
+  padding:0;
+}
+
+.work-card > span.now::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(172, 65, 172);
+  animation: 2s ease 0s infinite normal none running pulse;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: rgba(204, 169, 44, 0.4) 0px 0px 0px 0px;
+  }
+  70% {
+    box-shadow: rgba(255, 196, 0, 0) 0px 0px 0px 10px;
+  } 
+  100% {
+    box-shadow: rgba(204, 169, 44, 0) 0px 0px 0px 0px;
+  }
+}
+
+.work-card > span.now {
+  color: rgb(172, 65, 172);
+}
+
+.work-description>h4{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.work-description>p{
+  font-size: 12px;
+  font-weight: 400;
+  color:rgb(170, 169, 169);
+}
+
+.reviews {
   align-items: flex-start;
 }
 
-.review-head{
+.review-head {
   width: 100%;
   justify-content: space-between;
 }
 
-.arrows{
-  gap:1rem;
+.arrows {
+  gap: 1rem;
 }
 
-.arrows>a{
+.arrows > a {
   text-decoration: none;
   color: white;
   width: 50px;
@@ -441,20 +543,20 @@ span{
   transition: all 0.3s ease-in;
 }
 
-.arrows>a:hover{
+.arrows > a:hover {
   background-color: var(--principal);
   border: 1px solid var(--principal);
 }
 
-.review-cards{
-  margin:40px 0;
-  gap:3rem;
+.review-cards {
+  margin: 40px 0;
+  gap: 3rem;
   overflow: hidden;
 }
 
-.review-card{
+.review-card {
   border-radius: 20px;
-  padding:20px 30px;
+  padding: 20px 30px;
   border: 1px solid var(--lines);
   width: 440px;
   height: 280px;
@@ -463,89 +565,88 @@ span{
   transition: all 0.5s ease-out;
 }
 
-.review-description>p{
-  margin:12px 0;
+.review-description > p {
+  margin: 12px 0;
   font-size: 14px;
   line-height: 1rem;
-  color:rgb(180, 178, 178);
+  color: rgb(180, 178, 178);
 }
 
-.review-description>i{
+.review-description > i {
   font-size: 30px;
   color: rgb(73, 44, 73);
 }
 
-.review-person{
-  gap:20px;
+.review-person {
+  gap: 20px;
 }
 
-.review-person>img{
+.review-person > img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.review-person>div>h4{
+.review-person > div > h4 {
   font-size: 18px;
   font-weight: 600;
 }
 
-.review-person>div>p{
+.review-person > div > p {
   color: rgb(73, 44, 73);
   font-weight: 600;
   font-size: 15px;
 }
 
-.review-card:hover{
+.review-card:hover {
   background-color: var(--principal);
   border: 1px solid black;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-
-.contact{
+.contact {
   gap: 2rem;
   text-align: center;
 }
 
-.contact-ways{
-  gap:2rem;
+.contact-ways {
+  gap: 2rem;
 }
 
-.mail{
-  padding:30px 50px;
+.mail {
+  padding: 30px 50px;
   font-size: 20px;
 }
 
-.mail i{
+.mail i {
   font-size: 30px;
 }
 
-.mail>a{
+.mail > a {
   text-decoration: none;
   color: white;
-  margin:20px auto;
+  margin: 20px auto;
   width: 50px;
   height: 50px;
-  border:solid;
+  border: solid;
   padding: 10px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
 }
 
-.mail>a:last-child:hover{
+.mail > a:last-child:hover {
   background-color: var(--principal);
-  border:1px solid var(--principal);
-  color:var(--span);
+  border: 1px solid var(--principal);
+  color: var(--span);
 }
 
-.container>.to-top{
-  padding:2rem 0;
+.container > .to-top {
+  padding: 2rem 0;
 }
 
-.container>.to-top>a{
+.container > .to-top > a {
   width: fit-content;
   text-decoration: none;
   color: white;
@@ -553,45 +654,44 @@ span{
   transition: all 0.3s ease-in;
 }
 
-.container>.to-top>a:hover{
+.container > .to-top > a:hover {
   text-shadow: 0px 0px 10px white;
   border-bottom: 1px solid white;
 }
 
-footer.footer{
+footer.footer {
   justify-content: space-between;
   width: 100%;
   padding: 2rem 0;
   color: white;
   text-align: center;
-  border-top:2px solid var(--lines);
+  border-top: 2px solid var(--lines);
 }
 
-.footer>.socials{
-  gap:1rem;
+.footer > .socials {
+  gap: 1rem;
 }
 
-.footer>.socials>a{
+.footer > .socials > a {
   text-decoration: none;
   font-size: 30px;
   color: white;
-  padding:6px;
+  padding: 6px;
   border-radius: 50%;
   background-color: var(--principal);
 }
 
 @media screen and (max-width: 1430px) {
-  body{
-    zoom:85%;
+  body {
+    zoom: 85%;
   }
 }
 
 @media screen and (max-width: 1120px) {
-  body{
-    zoom:75%;
+  body {
+    zoom: 75%;
   }
 }
-
 
 @media screen and (max-width: 985px) {
 }
