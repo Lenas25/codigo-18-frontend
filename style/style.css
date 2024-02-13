@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: "Poppins", sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
 :root{
   --principal:rgba(52, 39, 59, 0.705);
   --span:rgb(152, 113, 152);
@@ -95,13 +102,12 @@ nav img{
   border-bottom: 1px solid rgb(179, 158, 190);
   color:rgb(179, 158, 190);
 }
-
 header{
   height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:5rem 0;
+  padding:6rem 0 5rem;
   gap:1rem;
 }
 
@@ -200,10 +206,6 @@ span{
 
 .wsp:hover{
   background-color: var(--span);
-}
-
-.extra-info{
-  margin: 5rem 10rem;
 }
 
 .experience{
@@ -414,9 +416,95 @@ span{
   color: var(--span);
 }
 
+.reviews{
+  align-items: flex-start;
+}
+
+.review-head{
+  width: 100%;
+  justify-content: space-between;
+}
+
+.arrows{
+  gap:1rem;
+}
+
+.arrows>a{
+  text-decoration: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--lines);
+  transition: all 0.3s ease-in;
+}
+
+.arrows>a:hover{
+  background-color: var(--principal);
+  border: 1px solid var(--principal);
+}
+
+.review-cards{
+  margin:40px 0;
+  gap:3rem;
+  overflow: hidden;
+}
+
+.review-card{
+  border-radius: 20px;
+  padding:20px 30px;
+  border: 1px solid var(--lines);
+  width: 440px;
+  height: 280px;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: all 0.5s ease-out;
+}
+
+.review-description>p{
+  margin:12px 0;
+  font-size: 14px;
+  line-height: 1rem;
+  color:rgb(180, 178, 178);
+}
+
+.review-description>i{
+  font-size: 30px;
+  color: rgb(73, 44, 73);
+}
+
+.review-person{
+  gap:20px;
+}
+
+.review-person>img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-person>div>h4{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.review-person>div>p{
+  color: rgb(73, 44, 73);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.review-card:hover{
+  background-color: var(--principal);
+  border: 1px solid black;
+  cursor:pointer;
+}
+
+
 .contact{
-  justify-content: center;
-  align-items: center;
   gap: 2rem;
   text-align: center;
 }
