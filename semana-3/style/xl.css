@@ -1,0 +1,121 @@
+@media (min-width: 1280px) {
+    h1 {
+      padding-top: 100px;
+    }
+  
+    .btn-menu {
+      display: none;
+    }
+  
+    .menu {
+      display: flex;
+      margin: 10px 0;
+      list-style: none;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .menu > li > a {
+      color: white;
+      text-decoration: none;
+    }
+  
+    .menu > li:last-child {
+      background-color: white;
+      border-radius: 24px;
+      padding: 10px 20px;
+    }
+  
+    .menu > li:last-child > a {
+      font-family: "Fraunces", sans-serif;
+      font-weight: 600;
+      color: var(--very-dark-desaturated-blue);
+    }
+  
+    .arrow-down {
+      margin-top: 90px;
+    }
+  
+    .flex-reverse {
+      flex-direction: row-reverse;
+    }
+  
+    .bg-egg {
+      background: url(../assets/desktop/image-transform.jpg);
+      height: 100% !important;
+      flex: 1;
+    }
+  
+    .section {
+      display: flex;
+      height: 70vh;
+    }
+  
+    .container-section {
+      padding: 0;
+      flex: 1;
+      height: 100% !important;
+    }
+  
+    .container-section > div > * {
+      text-align: left !important;
+    }
+  
+    .link-learn{
+      margin:20px 0 0;
+    }
+  
+    .container-section > div {
+      display: block;
+      margin: auto;
+      width: 60%;
+    }
+  
+    .container-section > div > h2 {
+      font-size: 50px;
+    }
+  
+    .container-section > div > p {
+      font-size: 18px;
+    }
+  
+    .bg-cup {
+      background: url(../assets/desktop/image-stand-out.jpg);
+      flex: 1;
+      height: 100% !important;
+    }
+  
+    .section-next {
+      display: flex;
+    }
+  
+    .section-next > div > div {
+      display: block;
+      width: 50%;
+    }
+  
+    .bg-cherry{
+      background: url(../assets/desktop/image-graphic-design.jpg);
+      flex:1;
+    }
+    
+    .bg-orange{
+      background: url(../assets/desktop/image-photography.jpg);
+      flex:1;
+    }
+  
+    .testimonials > div {
+      flex-direction: row;
+    }
+  
+    .testimonials > div > div {
+      width: 300px;
+      height: 300px;
+      justify-content: space-between;
+    }
+  
+    .img-gallery {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 400px;
+    }
+  }
