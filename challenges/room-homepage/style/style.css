@@ -21,7 +21,7 @@ body{
     font-family: 'League Spartan', sans-serif;
     background-color: hsl(0, 0%, 98%);
     color: var(--dark-gray);
-    overflow: hidden;
+    height: 100vh;
 }
 
 h1, h2{
@@ -50,7 +50,6 @@ nav>ul{
 
 .img-prin{
     position: relative;
-    display: flex;
 }
 
 .hero{
@@ -115,7 +114,8 @@ nav>ul{
     color: var(--dark-gray);
 }
 
-section:last-child{
+.static{
+    overflow: hidden;
     display:grid;
     grid-template-rows: 1fr 1fr 1fr;
 }
@@ -192,18 +192,16 @@ section:last-child{
         padding: 40px 50px;
     }
 
+    .hero{
+        height: 100%;
+    }
+
     .slide{
         display: grid;
         grid-template-columns: 1.9fr 1fr;
         grid-template-rows: 60vh;
     }
-
-
-    .hero{
-        height: 100%;
-    }
-
-    section:last-child{
+    .static{
         display:grid;
         grid-template-columns: 1fr 1.5fr 1fr;
         grid-template-rows: 40vh;
