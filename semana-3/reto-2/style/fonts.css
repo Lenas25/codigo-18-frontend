@@ -1,0 +1,6 @@
+/* Para usar fuentes localmente, pero en assets se debe crear una carpeta de fonts y colocarlo ahi */
+@font-face { 
+    font-family: "Ubuntu";
+    font-weight: 400;
+    src: url("../assets/");
+}
