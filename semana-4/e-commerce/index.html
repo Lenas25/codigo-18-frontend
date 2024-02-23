@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>E-Commerce Page | LenaDev</title>
+    <!-- tiene un defer para que cargue de forma asincrona luego del body se cargue el script -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <!-- fuentes en html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <style>
+    body{
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+  </style>
+  <body>
+    <header>
+      <nav class="flex justify-between items-center p-5 md:px-20 py-10">
+        <div class="flex items-center gap-5">
+          <button class="md:hidden">
+            <img src="./img/icon-menu.svg" alt="" />
+          </button>
+          <a href=""><img src="./img/logo.svg" alt="" /></a>
+          <ul class="hidden md:flex gap-7 ms-6">
+            <li><a href="">Collections</a></li>
+            <li><a href="">Men</a></li>
+            <li><a href="">Women</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="flex items-center gap-5">
+          <button>
+            <img src="./img/icon-cart.svg" alt="" />
+          </button>
+          <button>
+            <!-- en tailwind w-1 -> 4px , para hacer en porcentajes o cualquier otro es en corchetes es w-[10%]-->
+            <img class="w-6" src="./img/image-avatar.png" alt="" />
+          </button>
+        </div>
+      </nav>
+      <!-- margin en el eje x -->
+      <hr class="hidden md:block mx-20"/>
+    </header>
+  </body>
+</html>
