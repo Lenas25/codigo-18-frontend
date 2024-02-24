@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+body {
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+
+/* .mini-img {
+    @apply rounded-2xl w-[120px] hover:border hover:border-[#ff7d1a] hover:border-[3px] cursor-pointer;
+} */
+
+

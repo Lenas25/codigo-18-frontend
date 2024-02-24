@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body{
+    font-family: "Inter", sans-serif;
+}
+
+main{
+    height: 100vh;
+    display:grid;
+    grid-template-areas: 
+    "sidebar principal extra"
+    "player player player";
+    grid-template-rows: 1fr 108px;
+    grid-template-columns: 270px 1fr 299px;
+    background-color:#212121;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+/* fondo del scroll */
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+/* color del scroll */
+::-webkit-scrollbar-thumb{
+    background-color:#2d2d2d;
+    border-radius: 20px;
+}
+
+.sidebar{
+    grid-area:sidebar;
+}
+
+.principal{
+    grid-area:principal;
+}
+
+.extra{
+    grid-area:extra;
+}
+
+.player{
+    grid-area:player;
+}
+
+.glass{
+    backdrop-filter: blur(10px);
+    --webkit-backdrop-filter: blur(10px);
+}
+
+.link>img{
+    display: none;
+}
+
+.link:hover span{
+    display: none;
+}
+
+.link:hover img{
+    display: block;
+}
