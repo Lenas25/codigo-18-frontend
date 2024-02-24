@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tiene un defer para que cargue de forma asincrona luego del body se cargue el script -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <title>Blog Landing | LenaDev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+  <body class="bg-[#fffdfa]">
+    <main class="grid">
+      <header class="md:w-[80%] md:m-auto">
+            <nav class="flex justify-between items-center mx-3 my-5 md:my-16">
+          <a href="">
+            <img src="./img/logo.svg" alt="" class="w-10" />
+          </a>
+
+          <div>
+            <a href="" class="md:hidden"
+              ><img src="./img/icon-menu.svg" alt=""
+            /></a>
+            <ul class="hidden md:flex gap-10">
+              <li><a href="" class="font-medium text-[#5d5f79] hover:text-[#f15e50]">Home</a></li>
+              <li><a href="" class="font-medium text-[#5d5f79] hover:text-[#f15e50]">New</a></li>
+              <li><a href="" class="font-medium text-[#5d5f79] hover:text-[#f15e50]">Popular</a></li>
+              <li><a href="" class="font-medium text-[#5d5f79] hover:text-[#f15e50]">Trending</a></li>
+              <li><a href="" class="font-medium text-[#5d5f79] hover:text-[#f15e50]">Categories</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div class="md:grid grid-cols-[repeat(3,minmax(auto,350px))] gap-x-6 gap-y-14 md:mx-16 md:mb-16 justify-center">
+        <section class="mx-3 my-8 md:col-span-2 md:m-0">
+          <div>
+            <img
+              src="./img/image-web-3-mobile.jpg"
+              alt=""
+              class="w-full object-cover md:hidden" />
+            <img
+              src="./img/image-web-3-desktop.jpg"
+              alt=""
+              class=" hidden md:block md:w-full md:object-cover" />
+          </div>
+          <div class="md:flex items-center gap-10">
+            <h1 class="my-6 text-5xl font-bold">
+              The Bright Future of Web 3.0?
+            </h1>
+            <div>
+                <p class="mb-6 text-md text-[#5d5f79] leading-6">
+                    We dive into the next evolution of the web that claims to put the
+                    power of the platforms back into the hands of the people. But is
+                    it really fulfilling its promise?
+                  </p>
+                  <a
+                    href=""
+                    class="block w-fit bg-[#f15e50] text-white py-3 px-7 uppercase tracking-[0.4em] text-xs font-semibold hover:bg-black"
+                    >Read more</a
+                  >
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-3 my-11 bg-[#00001a] text-white p-5 md:m-0">
+          <h2 class="text-[#e9ab53] font-bold text-3xl mb-6">New</h2>
+          <div>
+            <div>
+              <h3
+                class="font-bold mb-2 text-lg hover:text-[#e9ab53] hover:cursor-pointer">
+                Hydrogen VS Electric Cars
+              </h3>
+              <p class="text-sm text-[#c5c6ce] leading-6">
+                Will hydrogen-fueled cars ever catch up to EVs?
+              </p>
+            </div>
+            <hr class="my-5 border-[#5d5f79]" />
+            <div>
+              <h3
+                class="font-bold mb-2 text-lg hover:text-[#e9ab53] hover:cursor-pointer">
+                The Downsides of AI Artistry
+              </h3>
+              <p class="text-sm text-[#c5c6ce] leading-6">
+                What are the possible adverse effects of on-demand AI image
+                generation?
+              </p>
+            </div>
+            <hr class="my-5 border-[#5d5f79]" />
+            <div>
+              <h3
+                class="font-bold mb-2 text-lg hover:text-[#e9ab53] hover:cursor-pointer">
+                Is VC Funding Drying Up?
+              </h3>
+              <p class="text-sm text-[#c5c6ce] leading-6">
+                Private funding by VC firms is down 50% YOY. We take a look at
+                what that means.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="md:w-full mx-3 mt-11 mb-16 flex flex-col gap-6 md:m-0 md:flex-row md: col-span-3">
+          <div class="flex items-center w-full gap-5">
+            <div>
+              <img
+                src="./img/image-retro-pcs.jpg"
+                alt=""
+                class="object-cover max-w-fit w-[100px]" />
+            </div>
+            <div>
+              <span class="font-bold text-3xl text-[#c5c6ce]">01</span>
+              <h2
+                class="my-2 font-bold text-xl hover:text-[#f15e50] hover:cursor-pointer">
+                Reviving Retro PCs
+              </h2>
+              <p class="text-[#5d5f79] font-medium">
+                What happens when old PCs are given modern upgrades?
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center w-full gap-5">
+            <div>
+              <img
+                src="./img/image-top-laptops.jpg"
+                alt=""
+                class="object-cover max-w-fit w-[100px]" />
+            </div>
+            <div>
+              <span class="font-bold text-3xl text-[#c5c6ce]">02</span>
+              <h2
+                class="my-2 font-bold text-xl hover:text-[#f15e50] hover:cursor-pointer">
+                Top 10 Laptops of 2022
+              </h2>
+              <p class="text-[#5d5f79] font-medium">
+                Our best picks for various needs and budgets.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center w-full gap-5">
+            <div>
+              <img
+                src="./img/image-gaming-growth.jpg"
+                alt=""
+                class="max-w-fit object-cover w-[100px]" />
+            </div>
+            <div>
+              <span class="font-bold text-3xl text-[#c5c6ce]">03</span>
+              <h2
+                class="my-2 font-bold text-xl hover:text-[#f15e50] hover:cursor-pointer">
+                The Growth of Gaming
+              </h2>
+              <p class="text-[#5d5f79] font-medium">
+                How the pandemic has sparked fresh opportunities.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
