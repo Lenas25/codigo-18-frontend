@@ -6,32 +6,3 @@ body {
   color: white;
 }
 
-:root {
-  --principal: #34273b;
-  --span: #987198;
-  --lines: #553268b4;
-}
-
-.review-cards {
-  margin: 40px 0;
-  gap: 3rem;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding:0 !important;
-}
-
-.review-card {
-  font-size: 10px;
-  flex: none;
-  border-radius: 20px;
-  padding: 20px 30px;
-  border: 1px solid var(--lines);
-  width: 440px;
-  height: 280px;
-  transition: all 0.5s ease-out;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
-}
