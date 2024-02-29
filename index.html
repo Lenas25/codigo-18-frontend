@@ -7,304 +7,600 @@
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
     <link rel="stylesheet" href="./style/style.css" />
     <title>Lena Suarez | Junior Software Developer</title>
   </head>
-  <body>
-    <div class="menu flex">
-      <nav>
-        <div class="logo flex row">
-          <img src="./images/icon.png" alt="" />
-          LenaDev
+  <body class="h-dvh">
+    <div class="w-full">
+      <nav
+        class="hidden md:flex w-[85%] m-auto mt-5 bg-[#34273bb4] rounded-2xl py-2 px-7 justify-between items-center">
+        <div class="flex items-center">
+          <img src="./image/icon.png" alt="" class="size-[70px]" />
+          <span class="tracking-wider">LenaDev</span>
         </div>
-        <div class="nav">
-          <ul class="nav-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#career">Career</a></li>
-            <li><a href="#reviews">Recomendations</a></li>
-            <li><a href="#contact">Contact Me</a></li>
+
+        <div class="hidden md:block">
+          <ul class="flex gap-6 text-sm lg:text-base gap-10 pe-4">
+            <li>
+              <a
+                href="#"
+                class="pb-2 hover:text-[#b39ebe] hover:border-b hover:border-b-[#b39ebe] transition duration-300 ease-in"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about-me"
+                class="pb-2 hover:text-[#b39ebe] hover:border-b hover:border-b-[#b39ebe] transition duration-300 ease-in"
+                >About Me</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="pb-2 hover:text-[#b39ebe] hover:border-b hover:border-b-[#b39ebe] transition duration-300 ease-in"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="pb-2 hover:text-[#b39ebe] hover:border-b hover:border-b-[#b39ebe] transition duration-300 ease-in">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a
+                href="#career"
+                class="pb-2 hover:text-[#b39ebe] hover:border-b hover:border-b-[#b39ebe] transition duration-300 ease-in">
+                Career
+              </a>
+            </li>
+            <li class="hidden">
+              <a
+                href="#reviews"
+                class="pb-2 hover:text-[#b39ebe] hover:border-b hover:border-b-[#b39ebe] transition duration-300 ease-in"
+                >Recomendations</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="pb-2 hover:text-[#b39ebe] hover:border-b hover:border-b-[#b39ebe] transition duration-300 ease-in"
+                >Contact Me</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
     </div>
-    <div class="container margin-prin">
-      <header>
-        <div class="hero flex">
-          <span class="greeting">🤍 Welcome!</span>
-          <h1 class="title">
+
+    <div class="flex flex-col">
+      <header
+        class="flex flex-col my-5 mx-10 md:flex-row md:items-center md:justify-between md:w-[80%] md:h-[80vh] md:py-16 md:m-auto ">
+        <div class="order-3 mt-5 md:order-1">
+          <span
+            class="py-2 px-3 bg-[#34273bb4] text-[#987198] font-semibold rounded-xl text-sm md:text-xl"
+            >🤍 Welcome!</span
+          >
+          <h1 class="mt-5 text-5xl font-semibold md:text-7xl">
             Lena <br />
             Suarez
           </h1>
-          <p class="career">Junior Software Developer</p>
-          <div class="social-links">
+          <p class="text-[#FFFFFF]/50 font-medium mt-2 text-lg md:text-xl">
+            Junior Software Developer
+          </p>
+
+          <div
+            class="hidden md:flex gap-5 items-center mt-5">
             <a
               href="https://www.linkedin.com/in/elena-s-080397218/"
-              target="_blank">
-              <i class="bx bxl-linkedin"></i>
+              target="_blank"
+              class="border p-3 rounded-full w-[50px] h-[50px] flex items-center justify-center hover:bg-[#34273bb4] hover:scale-110 hover:shadow  hover:shadow-[0_0_10px_0] hover:shadow-white transition duration-300">
+              <i class="bx bxl-linkedin text-3xl"></i>
             </a>
-            <a href="https://github.com/Lenas25" target="_blank"
-              ><i class="bx bxl-github"></i
+            <a
+              href="https://github.com/Lenas25"
+              target="_blank"
+              class="border p-3 rounded-full w-[50px] h-[50px] flex items-center justify-center hover:bg-[#34273bb4] hover:scale-110 hover:shadow  hover:shadow-[0_0_10px_0] hover:shadow-white transition duration-300"
+              ><i class="bx bxl-github text-3xl"></i
             ></a>
-            <a href="https://www.instagram.com/_lenasp/" target="_blank"
-              ><i class="bx bxl-instagram"></i
+            <a
+              href="https://www.instagram.com/_lenasp/"
+              target="_blank"
+              class="border p-3 rounded-full w-[50px] h-[50px] flex items-center justify-center hover:bg-[#34273bb4] hover:scale-110 hover:shadow  hover:shadow-[0_0_10px_0] hover:shadow-white transition duration-300"
+              ><i class="bx bxl-instagram text-3xl"></i
             ></a>
           </div>
         </div>
 
-        <div class="img-prin">
-          <img src="./images/avatar.png" alt="Avatar de Lena" />
+        <div
+          class="order-1 flex gap-5 items-center justify-center mx-5 mb-8 md:hidden">
+          <a
+            href="https://www.linkedin.com/in/elena-s-080397218/"
+            target="_blank"
+            class="border p-3 rounded-full w-[40px] h-[40px] flex items-center justify-center">
+            <i class="bx bxl-linkedin text-2xl"></i>
+          </a>
+          <a
+            href="https://github.com/Lenas25"
+            target="_blank"
+            class="border p-3 rounded-full w-[40px] h-[40px] flex items-center justify-center"
+            ><i class="bx bxl-github text-2xl"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/_lenasp/"
+            target="_blank"
+            class="border p-3 rounded-full w-[40px] h-[40px] flex items-center justify-center"
+            ><i class="bx bxl-instagram text-2xl"></i
+          ></a>
         </div>
 
-        <div class="contact-info flex">
-          <a href="files/CV Elena Suárez .pdf" target="_blank"
+          <div
+            class="order-2 hover:scale-110 transition ease-in duration-300 rounded-full bg-[#34273bb4] shadow-[0_0_20px_20px] shadow-[#34273bb4] mx-5 my-6 h-full">
+            <img
+              src="./image/avatar.png"
+              alt="Avatar de Lena"
+              class="object-cover size-[100%]" />
+          </div>
+
+        <div class="flex items-center order-4 mt-4 gap-10 md:flex-col md:items-end md:gap-3">
+          <a
+            href="./files-portfolio/CV Elena Suárez .pdf"
+            target="_blank"
+            class="text-[#987198] hover:text-white transition ease-in duration-300 md:text-lg"
             >Lena CV <i class="bx bxs-download"></i
           ></a>
-          <a href="" class="wsp flex row"
-            ><i class="bx bxl-whatsapp"></i> Let's talk</a
+          <a
+            href="https://api.whatsapp.com/send?phone=912905731&text=Buenas,%20me%20interesaría%20saber%20más%20sobre%20sus%20servicios...👩%E2%80%8D💻"
+            target="_blank"
+            class="flex items-center gap-5 border border-[#987198] justify-center py-1 px-5 rounded-3xl text-[#987198] hover:bg-[#987198] hover:text-white transition ease-in duration-300 md:text-lg"
+            ><i class="bx bxl-whatsapp text-2xl "></i> Let's talk</a
           >
         </div>
       </header>
 
-      <section class="extra-info padding-section">
-        <div class="experience">
-          <div class="experience-card">
-            <div class="flex">
-              <i class="bx bx-code-alt"></i>
-              <p>2 year as</p>
-              <h3>Programmer</h3>
+      <section class="py-20 px-10 ">
+        <div class="md:w-[80%] md:m-auto md:py-[10rem] md:border-b md:border-b-[#553268b4] md:border-t md:border-t-[#553268b4]">
+          <div class="md:grid w-fit m-auto grid-rows-[1fr,200px] grid-cols-1">
+            <div class="flex flex-col items-center justify-center gap-10 md:flex-row ">
+              <div
+                class="text-center size-[270px] border-[#553268b4] border rounded-3xl text-2xl flex items-center flex-col justify-center gap-4 hover:bg-[#553268b4] transition ease-in duration-300 md:size-[250px]">
+                <i class="bx bx-code-alt text-7xl text-[#987198] md:text-6xl"></i>
+                <div>
+                  <p class="text-xl mb-2">2 year as</p>
+                  <h3 class="font-semibold">Programmer</h3>
+                </div>
+              </div>
+              <div
+                class="text-center size-[270px] border-[#553268b4] border rounded-3xl text-2xl flex items-center flex-col justify-center gap-4 hover:bg-[#553268b4] transition ease-in duration-300 md:size-[250px]">
+                <i class="bx bx-network-chart text-7xl text-[#987198] md:text-6xl"></i>
+                <div>
+                  <p class="text-xl mb-2">1 year of</p>
+                  <h3 class="font-semibold">Works</h3>
+                </div>
+              </div>
+              <div
+                class="text-center size-[270px] border-[#553268b4] border rounded-3xl text-2xl flex items-center flex-col justify-center gap-4 hover:bg-[#553268b4] transition ease-in duration-300 md:size-[250px]">
+                <i class="bx bx-desktop text-7xl text-[#987198] md:text-6xl"></i>
+                <div>
+                  <p class="text-xl mb-2">4 years as</p>
+                  <h3 class="font-semibold">Designer</h3>
+                </div>
+              </div>
             </div>
-            <div class="flex">
-              <i class="bx bx-network-chart"></i>
-              <p>1 year of</p>
-              <h3>Works</h3>
-            </div>
-            <div class="flex">
-              <i class="bx bx-desktop"></i>
-              <p>4 years as</p>
-              <h3>designer</h3>
-            </div>
-          </div>
-
-          <div class="experience-description flex row">
-            <div>
-              <p>Developer</p>
-              <h3>FullStack</h3>
-            </div>
-            <div>
-              <p>Thousands of projects</p>
-              <h3>Experiences</h3>
-            </div>
-            <div>
-              <p>Designer Freelance</p>
-              <h3>UI|UX</h3>
+  
+            <div class="hidden md:flex w-full text-center p-5  gap-10 bg-[#34273bb4] items-center justify-between m-auto mt-5 rounded-2xl text-[#987198]">
+              <div class="w-[200px]">
+                <p>Developer</p>
+                <h3 class="font-semibold text-2xl">FullStack</h3>
+              </div>
+              <div class="w-[200px]">
+                <p>Thousands of projects</p>
+                <h3 class="font-semibold text-2xl">Experiences</h3>
+              </div>
+              <div class="w-[200px]">
+                <p>Designer Freelance</p>
+                <h3 class="font-semibold text-2xl">UI|UX</h3>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="aboutme padding-section" id="about-me">
-        <img src="./images/photo.webp" alt="Foto de perfil" />
+      <section id="about-me" class="py-5 px-10 md:flex md:w-[80%] md:m-auto md:justify-between md:gap-10 md:my-20">
+        <img
+          src="./image/photo.webp"
+          alt="Foto de perfil"
+          class="size-[250px] object-cover rounded-full m-auto md:size-[400px] flex-none" />
 
-        <div class="aboutme-info flex">
-          <span>👩‍💻 About Me</span>
-          <h2 class="subtitle" style="margin: 0">
+        <div class="mt-5 md:w-[50%]">
+          <span
+            class="py-2 px-3 bg-[#34273bb4] text-[#987198] font-semibold rounded-xl text-xs md:text-xl"
+            >👩‍💻 About Me</span
+          >
+          <h2 class="text-3xl my-4 font-semibold md:text-5xl">
             Elena Ariana <br />
             Suarez Paredes
           </h2>
-          <p>
-            💻 My name is Elena Suarez Paredes, I am from Lima, Peru, I am a
-            junior software developer, I studied Software Engineering at
-            Univeridad Tecnologica del Peru.
-          </p>
-          <p>
-            🌱 I am passionate about learning new technologies and programming
-            languages, I am currently learning HTML, CSS and JS.
-          </p>
-          <p>
-            📚 I am also interested in learning about artificial intelligence
-            and machine learning.
-          </p>
+          <div class="text-sm text-[#FFFFFF]/50">
+            <div class="hidden md:flex gap-4 flex-col text-white text-lg">
+              <p>
+                💻 My name is Elena Suarez Paredes, I am from Lima, Peru, I am a
+                junior software developer, I studied Software Engineering at
+                Univeridad Tecnologica del Peru.
+              </p>
+              <p>
+                🌱 I am passionate about learning new technologies and
+                programming languages, I am currently learning HTML, CSS and JS.
+              </p>
+              <p>
+                📚 I am also interested in learning about artificial
+                intelligence and machine learning.
+              </p>
+            </div>
+            <div class="flex flex-col gap-2 md:hidden">
+              <p>
+                You can call me Lena. My pleasure! I've been working for more
+                than 1 year on front end projects with JavaScript, React and
+                several Frameworks. I'm a software engineering student with
+                aspirations in Full Stack development and artificial
+                intelligence.
+              </p>
+              <p>
+                💻 In each project I focus to meet the objectives by striving
+                100% and working with the team for continuous improvement.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="projects" class="project flex padding-section">
-        <div class="project-head flex row">
-          <div class="project-title">
-            <span>🔗 Portfolio</span>
-            <h2 class="subtitle">Projects</h2>
+      <section id="projects" class="py-10 ps-10 md:w-[80%] md:m-auto md:my-20">
+        <div class="flex flex-col gap-2 mb-8 md:flex-row md:items-center justify-between">
+          <div class="">
+            <span
+              class="py-2 px-3 bg-[#34273bb4] text-[#987198] font-semibold rounded-xl text-sm md:text-xl"
+              >🔗 Portfolio</span
+            >
+            <h2 class="text-3xl my-6 font-semibold md:text-5xl">Projects</h2>
           </div>
 
-          <ul class="flex row">
-            <li><a href="#">Web</a></li>
-            <li><a href="#">Mobile</a></li>
-            <li><a href="#">Design</a></li>
+          <ul class="flex gap-5">
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-5 justify-center py-1 px-5 rounded-xl text-[#846898] border border-[#846898] hover:text-white hover:bg-[#34273b] hover:border-[#34273b] transition ease-in duration-300"
+                >Web</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-5 justify-center py-1 px-5 rounded-xl text-[#846898] border border-[#846898] hover:text-white hover:bg-[#34273b] hover:border-[#34273b] transition ease-in duration-300"
+                >Mobile</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex items-center gap-5justify-center py-1 px-5 rounded-xl text-[#846898] border border-[#846898] hover:bg-[#34273b] hover:border-[#34273b] hover:text-white transition ease-in duration-300"
+                >Design</a
+              >
+            </li>
           </ul>
         </div>
 
-        <div class="project-cards flex row">
-          <div class="project-card flex">
-            <div class="project-subtitle flex">
-              <h3>Project 1</h3>
+        <div class="flex gap-5 overflow-hidden md:flex-wrap">
+          <div
+            class="p-5 w-[260px] h-[360px] text-sm border border-[#553268b4] rounded-2xl flex-none hover:bg-[#34273bb4] hover:border-black transition duration-300 ease-in">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-base">Project 1</h3>
               <a href=""><i class="bx bxs-chevrons-right"></i></a>
             </div>
-            <p>
+            <p class="mb-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
               vehicula, nisl nec tincidunt.
             </p>
-            <div class="languages flex row">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JS</span>
+            <div class="flex gap-4 items-center mb-4">
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >HTML</span
+              >
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >CSS</span
+              >
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >JS</span
+              >
             </div>
             <img src="" alt="Proyecto 1" />
           </div>
 
-          <div class="project-card flex">
-            <div class="project-subtitle flex">
-              <h3>Project 2</h3>
+          <div
+            class="p-5 w-[260px] h-[360px] text-sm border border-[#553268b4] rounded-2xl flex-none hover:bg-[#34273bb4] hover:border-black transition duration-300 ease-in">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-base">Project 2</h3>
               <a href=""><i class="bx bxs-chevrons-right"></i></a>
             </div>
-            <p>
+            <p class="mb-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
               vehicula, nisl nec tincidunt.
             </p>
-            <div class="languages flex row">
-              <span>Typescrit</span>
-              <span>React JS</span>
+            <div class="flex gap-4 items-center mb-4">
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >HTML</span
+              >
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >CSS</span
+              >
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >JS</span
+              >
+            </div>
+            <img src="" alt="Proyecto 1" />
+          </div>
+
+          <div
+            class="p-5 w-[260px] h-[360px] text-sm border border-[#553268b4] rounded-2xl flex-none hover:bg-[#34273bb4] hover:border-black transition duration-300 ease-in">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-base">Project 3</h3>
+              <a href=""><i class="bx bxs-chevrons-right"></i></a>
+            </div>
+            <p class="mb-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              vehicula, nisl nec tincidunt.
+            </p>
+            <div class="flex gap-4 items-center mb-4">
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >HTML</span
+              >
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >CSS</span
+              >
+              <span class="p-2 bg-[#3b2f4790] rounded-lg text-[#9b7ae1]"
+                >JS</span
+              >
             </div>
             <img src="" alt="Proyecto 1" />
           </div>
         </div>
 
-        <div class="more flex">
-          <a href="#" class="flex row"
-            ><i class="bx bxl-github"></i> See more projects
+        <div class="more flex mt-12 md:justify-center ">
+          <a
+            href="https://github.com/Lenas25?tab=repositories"
+            target="_blank" class="flex row items-center gap-4 text-[#846898] border border-[#846898] p-3 text-sm rounded-xl transition ease-in duration-300 shadow-[0_0_10px_0] shadow-[#987198] hover:opacity-55 brightness-200 md:text-base"
+            ><i class="bx bxl-github text-xl"></i> See more projects
             <i class="bx bx-right-arrow-alt"></i
           ></a>
         </div>
       </section>
 
-      <section class="skills flex padding-section" id="skills">
-        <div class="skills-head">
-          <span>✒️ Skills - Experiences</span>
-          <h2 class="subtitle">Technologies and Skills</h2>
+      <section id="skills" class="p-10 md:w-[80%] md:m-auto md:text-center md:my-20">
+        <div class="">
+          <span
+            class="py-2 px-3 bg-[#34273bb4] text-[#987198] font-semibold rounded-xl text-sm md:text-xl"
+            >✒️ Skills - Experiences</span
+          >
+          <h2 class="text-3xl my-6 font-semibold md:text-5xl">Technologies and Skills</h2>
         </div>
 
-        <div class="tech">
-          <p>Technologies use to make projects and day by day</p>
-          <div class="lg flex">
-            <i class="bx bxl-postgresql"></i>
-            <i class="bx bxl-html5"></i>
-            <i class="bx bxl-css3"></i>
-            <i class="bx bxl-tailwind-css"></i>
-            <i class="bx bxl-java"></i>
-            <i class="bx bxl-javascript"></i>
-            <i class="bx bxl-react"></i>
-            <i class="bx bxl-nodejs"></i>
-            <i class="bx bxl-git"></i>
-            <i class="bx bxl-figma"></i>
+        <div>
+          <p class="mb-8 md:text-xl md:mb-10">Technologies use to make projects and day by day</p>
+          <div
+            class="flex flex-wrap gap-6 items-center justify-center text-5xl text-[#987198] md:text-8xl">
+            <i
+              class="bx bxl-postgresql hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-html5 hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-css3 hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-tailwind-css hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-java hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-javascript hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-react hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-nodejs hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-git hover:scale-150 transition duration-300 ease-in"></i>
+            <i
+              class="bx bxl-figma hover:scale-150 transition duration-300 ease-in"></i>
           </div>
         </div>
       </section>
 
-      <section class="works flex padding-section" id="career">
-        <div class="work">
-          <span>💼 Career</span>
-          <h2 class="subtitle">Academic and Profesional Career</h2>
+      <section id="career" class="ps-10 py-10 md:w-[80%] md:m-auto md:my-20">
+        <div class="md:text-center">
+          <span
+            class="py-2 px-3 bg-[#34273bb4] text-[#987198] font-semibold rounded-xl text-sm md:text-xl"
+            >💼 Career</span
+          >
+          <h2 class="text-3xl my-6 font-semibold md:text-5xl md:mb-16">
+            Academic and Profesional Career
+          </h2>
         </div>
 
-        <div class="work-info flex row">
-          <div class="professional flex">
-            <div class="work-head flex">
-              <h3>Professional</h3>
-              <p>2024 · Now</p>
-            </div>
-            <div class="work-card flex">
-              <div class="work-description">
-                <h4>Desenvolvedor front-end e UI Designer Freelancer</h4>
-                <p>
-                  Atuando como desenvolvedor Front-end e UI Designer com
-                  React.js, Next.js, Node.js, Typescript, TailwindCss,
-                  Styled-componens, Vercel. Netfly, Vite, Figma e outras
-                  tecnologias.
-                </p>
-              </div>
-              <span class="time">Maio/2023 · Jul/2023</span>
+        <div class="md:flex justify-center items-start gap-20">
+          <div class="mb-10 ">
+            <div class="mb-5 md:text-center">
+              <h3 class="mb-2 text-lg font-semibold md:text-2xl">Professional</h3>
+              <p class="text-[#a8a5a5] text-sm md:text-lg">2024 · Now</p>
             </div>
 
-            <div class="work-card flex">
-              <div class="work-description">
-                <h4>Desenvolvedor front-end e UI Designer Freelancer</h4>
-                <p>
-                  Atuando como desenvolvedor Front-end e UI Designer com
-                  React.js, Next.js, Node.js, Typescript, TailwindCss,
-                  Styled-componens, Vercel. Netfly, Vite, Figma e outras
-                  tecnologias.
-                </p>
+            <div class="flex gap-5 overflow-hidden md:flex-col ">
+              <div
+                class="h-[110px] w-[300px] flex-none border p-3 border-[#472447] rounded-xl flex flex-col justify-between hover:bg-[#472447] hover:border-black md:h-[200px] md:w-[400px] md:p-5">
+                <div class="">
+                  <div class="hidden md:flex flex-col gap-2">
+                    <h4 class="font-semibold">Desenvolvedor front-end e UI Designer Freelancer</h4>
+                    <p class="text-xs  text-[#aaa9a9]">
+                      Atuando como desenvolvedor Front-end e UI Designer com
+                      React.js, Next.js, Node.js, Typescript, TailwindCss,
+                      Styled-componens, Vercel. Netfly, Vite, Figma e outras
+                      tecnologias.
+                    </p>
+                  </div>
+                  <div class="md:hidden">
+                    <h4 class="text-sm font-semibold mb-2">
+                      Desenvolvedor front-end
+                    </h4>
+                    <p class="text-xs leading-4 mb-3 text-[#FFFFFF]/50">
+                      Atuando como desenvolvedor Front-end com React.js,
+                      Next.js, Node.js,TailwindCss.
+                    </p>
+                  </div>
+                </div>
+                <span class="text-[#8d578d] text-xs self-end md:self-start md:text-sm"
+                  >Maio/2023 · Jul/2023</span
+                >
               </div>
-              <span class="time">Maio/2023 · Jul/2023</span>
-            </div>
 
-            <div class="work-card flex">
-              <div class="work-description">
-                <h4>Desenvolvedor front-end e UI Designer Freelancer</h4>
-                <p>
-                  Atuando como desenvolvedor Front-end e UI Designer com
-                  React.js, Next.js, Node.js, Typescript, TailwindCss,
-                  Styled-componens, Vercel. Netfly, Vite, Figma e outras
-                  tecnologias.
-                </p>
+              <div
+                class="h-[110px] w-[300px] flex-none border p-3 border-[#472447] rounded-xl flex flex-col justify-between hover:bg-[#472447] hover:border-black md:h-[200px] md:w-[400px] md:p-5">
+                <div class="">
+                  <div class="hidden md:flex flex-col gap-2">
+                    <h4 class="font-semibold">Desenvolvedor front-end e UI Designer Freelancer</h4>
+                    <p class="text-xs  text-[#aaa9a9]">
+                      Atuando como desenvolvedor Front-end e UI Designer com
+                      React.js, Next.js, Node.js, Typescript, TailwindCss,
+                      Styled-componens, Vercel. Netfly, Vite, Figma e outras
+                      tecnologias.
+                    </p>
+                  </div>
+                  <div class="md:hidden">
+                    <h4 class="text-sm font-semibold mb-2">
+                      Desenvolvedor front-end
+                    </h4>
+                    <p class="text-xs leading-4 mb-3 text-[#FFFFFF]/50">
+                      Atuando como desenvolvedor Front-end com React.js,
+                      Next.js, Node.js,TailwindCss.
+                    </p>
+                  </div>
+                </div>
+                <span class="text-[#8d578d] text-xs self-end md:self-start md:text-sm"
+                  >Maio/2023 · Jul/2023</span
+                >
               </div>
-              <span class="time">Maio/2023 · Jul/2023</span>
+
+              <div
+                class="h-[110px] w-[300px] flex-none border p-3 border-[#472447] rounded-xl flex flex-col justify-between hover:bg-[#472447] hover:border-black md:h-[200px] md:w-[400px] md:p-5">
+                <div class="">
+                  <div class="hidden md:flex flex-col gap-2">
+                    <h4 class="font-semibold">Desenvolvedor front-end e UI Designer Freelancer</h4>
+                    <p class="text-xs  text-[#aaa9a9]">
+                      Atuando como desenvolvedor Front-end e UI Designer com
+                      React.js, Next.js, Node.js, Typescript, TailwindCss,
+                      Styled-componens, Vercel. Netfly, Vite, Figma e outras
+                      tecnologias.
+                    </p>
+                  </div>
+                  <div class="md:hidden">
+                    <h4 class="text-sm font-semibold mb-2">
+                      Desenvolvedor front-end
+                    </h4>
+                    <p class="text-xs leading-4 mb-3 text-[#FFFFFF]/50">
+                      Atuando como desenvolvedor Front-end com React.js,
+                      Next.js, Node.js,TailwindCss.
+                    </p>
+                  </div>
+                </div>
+                <span class="text-[#8d578d] text-xs self-end md:self-start md:text-sm"
+                  >Maio/2023 · Jul/2023</span
+                >
+              </div>
+
             </div>
           </div>
 
-          <div class="academic flex">
-            <div class="work-head flex">
-              <h3>Academic</h3>
-              <p>2021 · Now</p>
-            </div>
-            <div class="work-card flex now">
-              <div class="work-description">
-                <h4>Codigo - Tecsup : Student to be full stack developer</h4>
-                <p>
-                  Full stack development / frontend and backend course where you learn languages such as CSS, HTML, Python, Javascript, various frameworks and use of APIs, databases, servers, in addition to the complete theory..
-                </p>
-              </div>
-              <span class="time now flex row">Feb/2024 · Now</span>
+          <div>
+            <div class="mb-5 md:text-center">
+              <h3 class="mb-2 text-lg font-semibold md:text-2xl">Academic</h3>
+              <p class="text-[#a8a5a5] text-sm md:text-lg">2021 · Now</p>
             </div>
 
-            <div class="work-card flex now">
-              <div class="work-description">
-                <h4>Universidad Tecnologica del Peru - Software Engineering</h4>
-                <p>
-                  Studying to be a professional in software engineering where you progressively receive certificates from the university and upon completion you can specialize in some branch of technology to be able to use it for work.
-                </p>
+            <div class="flex gap-5 overflow-hidden md:flex-col">
+              <div
+                class="h-[110px] w-[300px] flex-none border p-3 border-[#cb00cb] rounded-xl flex flex-col justify-between hover:bg-[#cb00cb7c] hover:border-black  md:h-[200px] md:w-[400px] md:p-5">
+                <div>
+                  <div class="hidden md:flex flex-col gap-2">
+                    <h4 class="font-semibold">
+                      Codigo - Tecsup : Student to be full stack developer
+                    </h4>
+                    <p class="text-xs text-[#aaa9a9]">
+                      Full stack development / frontend and backend course where
+                      you learn languages such as CSS, HTML, Python, Javascript,
+                      various frameworks and use of APIs, databases, servers, in
+                      addition to the complete theory.
+                    </p>
+                  </div>
+                  <div class="md:hidden">
+                    <h4 class="text-sm font-semibold mb-2">Codigo - Tecsup</h4>
+                    <p class="text-xs leading-4 mb-3 text-[#FFFFFF]/50">
+                      Learn languages such as CSS, HTML, Python, Javascript,
+                      various frameworks.
+                    </p>
+                  </div>
+                </div>
+                <span class=" flex items-center gap-4 text-[#cb00cb] text-xs font-semibold self-end md:self-start md:text-sm before:block before:size-[10px] before:bg-[#ac41ac] before:rounded-full before:animate-ping"
+                  >Feb/2024 · Now</span
+                >
               </div>
-              <span class="time now flex row">Mar/2021 · Now</span>
+
+              <div
+                class="h-[110px] w-[300px] flex-none border p-3 border-[#cb00cb] rounded-xl flex flex-col justify-between hover:bg-[#cb00cb7c] hover:border-black md:h-[200px] md:w-[400px] md:p-5">
+                <div>
+                  <div class="hidden md:flex flex-col gap-2">
+                    <h4 class="font-semibold">
+                      Universidad Tecnologica del Peru - Software Engineering
+                    </h4>
+                    <p class="text-xs text-[#aaa9a9]">
+                      Studying to be a professional in software engineering
+                      where you progressively receive certificates from the
+                      university and upon completion you can specialize in some
+                      branch of technology to be able to use it for work.
+                    </p>
+                  </div>
+                  <div class="md:hidden">
+                    <h4 class="text-sm font-semibold mb-2">
+                      Universidad Tecnologica del Peru
+                    </h4>
+                    <p class="text-xs leading-4 mb-3 text-[#FFFFFF]/50">
+                      Software Engineering Student interested in specialize on
+                      Artifial Intelligence.
+                    </p>
+                  </div>
+                </div>
+                <span class="flex items-center gap-4 text-[#cb00cb] text-xs font-semibold self-end md:self-start md:text-sm before:block before:size-[10px] before:bg-[#ac41ac] before:rounded-full before:animate-ping "
+                  >Mar/2021 · Now</span
+                >
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="reviews flex padding-section" id="reviews">
-        <div class="review-head flex row">
-          <div class="review-title">
-            <span>📝 Recommendations</span>
-            <h2 class="subtitle">Reviews</h2>
+      <section class="hidden ps-10 py-5">
+        <div class="">
+          <div class="">
+            <span
+              class="py-2 px-3 bg-[#34273bb4] text-[#987198] font-semibold rounded-xl text-sm"
+              >📝 Recommendations</span
+            >
+            <h2 class="text-3xl my-6 font-semibold">Reviews</h2>
           </div>
-          <div class="arrows flex row">
-            <a href="" class="flex row"><i class="bx bx-chevron-left"></i></a>
-            <a href="" class="flex wor"><i class="bx bx-chevron-right"></i></a>
+          <div class="">
+            <a href="" class=""><i class="bx bx-chevron-left"></i></a>
+            <a href="" class=""><i class="bx bx-chevron-right"></i></a>
           </div>
         </div>
 
-        <div class="review-cards flex row">
-          <div class="review-card flex">
-            <div class="review-description">
+        <div class="review-cards">
+          <div class="review-card">
+            <div class="">
               <i class="bx bxs-quote-left bx-rotate-180"></i>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -313,7 +609,7 @@
                 reiciendis quo totam, autem eos?
               </p>
             </div>
-            <div class="review-person flex row">
+            <div class="">
               <img src="" alt="Persona 1" />
               <div>
                 <h4>Persona 1</h4>
@@ -322,8 +618,8 @@
             </div>
           </div>
 
-          <div class="review-card flex">
-            <div class="review-description">
+          <div class="review-card">
+            <div class="">
               <i class="bx bxs-quote-left bx-rotate-180"></i>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -333,7 +629,7 @@
                 quisquam neque vitae nesciunt molestias illo, atque, dolor vero.
               </p>
             </div>
-            <div class="review-person flex row">
+            <div class="">
               <img src="" alt="Persona 2" />
               <div>
                 <h4>Persona 2</h4>
@@ -342,15 +638,15 @@
             </div>
           </div>
 
-          <div class="review-card flex">
-            <div class="review-description">
+          <div class="review-card">
+            <div class="">
               <i class="bx bxs-quote-left bx-rotate-180"></i>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                 vehicula, nisl nec tincidunt.
               </p>
             </div>
-            <div class="review-person flex row">
+            <div class="">
               <img src="" alt="Persona 3" />
               <div>
                 <h4>Persona 3</h4>
@@ -359,15 +655,15 @@
             </div>
           </div>
 
-          <div class="review-card flex">
-            <div class="review-description">
+          <div class="review-card">
+            <div class="">
               <i class="bx bxs-quote-left bx-rotate-180"></i>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                 vehicula, nisl nec tincidunt.
               </p>
             </div>
-            <div class="review-person flex row">
+            <div class="">
               <img src="" alt="Persona 4" />
               <div>
                 <h4>Persona 4</h4>
@@ -378,41 +674,60 @@
         </div>
       </section>
 
-      <section class="contact flex padding-section" id="contact">
-        <div class="contact-head">
-          <span>📬 Contact Me</span>
-          <h2 class="subtitle">Lets talk!</h2>
+      <section id="contact" class="p-10 md:w-[80%] md:m-auto md:text-center md:flex md:flex-col md:gap-10 md:my-20">
+        <div>
+          <span
+            class="py-2 px-3 bg-[#34273bb4] text-[#987198] font-semibold rounded-xl text-sm md:text-xl"
+            >📬 Contact Me</span
+          >
+          <h2 class="text-3xl my-6 font-semibold md:text-5xl">Lets talk!</h2>
         </div>
 
-        <div class="contact-ways flex row">
-          <a href="" class="wsp flex row">
-            <i class="bx bxl-whatsapp"></i> Send me a message
+        <div class="flex flex-col gap-6 md:gap-20 md:flex-row md:items-center  md:justify-center">
+          <a
+          href="https://api.whatsapp.com/send?phone=912905731&text=Buenas,%20me%20interesaría%20saber%20más%20sobre%20sus%20servicios...👩%E2%80%8D💻"
+          target="_blank"
+            class="flex items-center gap-5 border border-[#987198] justify-center py-1 px-5 rounded-3xl text-[#987198] hover:bg-[#987198] hover:text-white transition ease-in duration-300 w-fit order-2 md:order-1 md:text-xl md:px-16">
+            <i class="bx bxl-whatsapp text-2xl md:text-3xl"></i>Text Me
           </a>
-          <div class="mail">
-            <i class="bx bx-mail-send"></i>
-            <h4>E-mail:</h4>
-            <p>easp0104@gmail.com</p>
-            <a href="#" class="flex row">
-              <i class="bx bx-copy"></i>
-            </a>
+          <div class="text-[#987198] order-1 md:text-white">
+            <i class="bx bx-mail-send text-2xl"></i>
+            <h4 class="text-xl md:text-2xl">E-mail:</h4>
+            <div class="flex gap-5 items-center md:flex-col md:gap-6">
+              <p class="text-white md:text-xl">easp0104@gmail.com</p>
+              <a
+                href="#"
+                class="transition ease-in duration-300 hover:scale-110 hover:text-white md:border md:rounded-full md:size-[50px] md:flex md:items-center md:justify-center md:hover:bg-[#34273bb4] md:hover:border-black">
+                <i class="bx bx-copy text-2xl md:text-3xl md:hover:text-[#987198]"></i>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <div class="to-top flex padding-section">
-        <a href="" class="flex row"
+      <div class="py-5 flex items-center justify-center px-10 md:py-10">
+        <a
+          href=""
+          class="flex items-center gap-4 hover:border-b pb-2 transition ease-in duration-300"
           >Back to top <i class="bx bx-up-arrow-alt"></i
         ></a>
       </div>
-
-      <footer class="footer flex row">
-        <p>Copyrigth © Lena Suarez - 2021</p>
-        <div class="socials flex row">
-          <a href="#" class="flex"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="flex"><i class="bx bxl-github"></i></a>
-          <a href="#" class="flex"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </footer>
     </div>
+
+    <footer
+      class="flex flex-col gap-4 items-center justify-center bg-[#34273b] py-4 md:w-[80%] md:m-auto md:bg-transparent md:flex-row md:p-8 md:justify-between md:border-t-2 md:border-t-[#553268b4] ">
+      <p class="order-2 text-[#FFFFFF]/50 md:order-1 md:text-white">Copyrigth © Lena Suarez - 2021</p>
+      <div class="flex order-1 items-center justify-center gap-4">
+        <a href="#" class="text-2xl p-2 border rounded-full flex items-center md:bg-[#34273bb4] md:border-none"
+          ><i class="bx bxl-instagram"></i
+        ></a>
+        <a href="#" class="text-2xl p-2 border rounded-full flex items-center md:bg-[#34273bb4] md:border-none"
+          ><i class="bx bxl-github"></i
+        ></a>
+        <a href="#" class="text-2xl p-2 border rounded-full flex items-center md:bg-[#34273bb4] md:border-none"
+          ><i class="bx bxl-linkedin"></i
+        ></a>
+      </div>
+    </footer>
   </body>
 </html>

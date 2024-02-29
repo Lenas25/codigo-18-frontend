@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root{
+    --bg:#f8f5f2;
+    --button:#1F2544;
+    ---paragraph:#07143F;
+    --titles:#232323;
+    --second:#4E47C6;
+    --extra:#FAB440;
+}
+
+body{
+    color: var(---paragraph);
+    height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    grid-template-areas: 
+    "aside header"
+    "aside main";
+}
+
+
+header{
+    grid-area:header;
+}
+
+
+aside{
+    grid-area:aside;
+    background-color: var(--second);
+    color:white;
+}
+
+main>div:nth-child(1){
+    grid-area:status;
+}
+
+main>div:nth-child(2){
+    grid-area:c1;
+}
+
+main>div:nth-child(3){
+    grid-area:c2;
+}
+
+main>div:nth-child(4){
+    grid-area:c3;
+}
+
+main>div:nth-child(5){
+    grid-area:c4;
+}
+
+main>div:nth-child(6){
+    grid-area:c5;
+}
+
+main{
+    grid-area:main;
+    grid-template-areas: 
+    "status status c1" 
+    "status status c2"
+    "c3 c4 c5";
+}
+
+main>div{
+    border: 1px solid var(--second);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+}
+
+@media (max-width:768px){
+    body{
+        grid-template-columns: 100px 1fr !important;
+        height: auto !important;
+    }
+
+    main{
+        grid-template-areas: initial;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(6,200px) !important;
+    }
+
+    main>div{
+        grid-area:initial !important;
+    }
+}
