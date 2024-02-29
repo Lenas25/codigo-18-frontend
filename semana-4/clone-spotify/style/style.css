@@ -10,7 +10,7 @@ main{
     grid-template-areas: 
     "sidebar principal extra"
     "player player player";
-    grid-template-rows: 1fr 108px;
+    grid-template-rows: 1fr 10vh;
     grid-template-columns: 270px 1fr 299px;
     background-color:#212121;
 }
@@ -46,10 +46,10 @@ main{
     grid-area:player;
 }
 
-.glass{
+/* .glass{
     backdrop-filter: blur(10px);
     --webkit-backdrop-filter: blur(10px);
-}
+} */
 
 .link>img{
     display: none;
@@ -61,4 +61,12 @@ main{
 
 .link:hover img{
     display: block;
+}
+
+.bg-blur{
+    background: url(../assets/images/bg-play.png);
+}
+
+header{
+    background: url(../assets/images/bg-principal.png) no-repeat center center / cover;
 }
