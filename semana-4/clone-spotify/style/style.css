@@ -8,9 +8,8 @@ main{
     height: 100vh;
     display:grid;
     grid-template-areas: 
-    "sidebar principal extra"
-    "player player player";
-    grid-template-rows: 1fr 10vh;
+    "sidebar principal extra";
+    grid-template-rows: 100vh;
     grid-template-columns: 270px 1fr 299px;
     background-color:#212121;
 }
@@ -61,10 +60,6 @@ main{
 
 .link:hover img{
     display: block;
-}
-
-.bg-blur{
-    background: url(../assets/images/bg-play.png);
 }
 
 header{
