@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+:root{
+    --light-red: #ff525d;
+    --very-light-red: #ff8f70;
+    --light-red: #ff6f47;
+    --very-dark-blue: hsl(208, 49%, 24%);
+    --white: hsl(0, 0%, 100%);
+    --grayish-blue: hsl(240, 2%, 79%);
+    --very-dark-grayish-blue: #4b5862;
+    --very-dark-black-blue: #25252d;
+    --very-dark-gray-blue: #2c2d3f;
+    --very-dark-desaturated-blue: #3f4164;
+
+}
+
+body{
+    font-family: 'Overpass', sans-serif;
+    color: var(--very-dark-blue);
+}
+
+header{
+    background:
+    url(../assets/images/bg-pattern-intro-mobile.svg) center/cover no-repeat, linear-gradient(to bottom, #ff8f70, #ff525d 60%);
+    background-size: 200vh;  
+    background-position: 35% 40%;
+}
+
+.mid{
+    background:url(../assets/images/bg-pattern-circles.svg)no-repeat, linear-gradient(to bottom, var(--very-dark-gray-blue), var(--very-dark-desaturated-blue) 60%);
+    background-size: 90vh;
+    background-position: 50% 440%;
+}
+
+footer ul li a:hover{
+    border-bottom: 1px solid white;
+
+}

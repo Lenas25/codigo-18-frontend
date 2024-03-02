@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Blog Page | LenaDevS</title>
+  </head>
+  <body>
+    <!-- bg-gradient-to-b from-[#ff8f70] to-[#ff525d] -->
+    <header class="h-[90vh] rounded-bl-[100px] relative">
+      <div class="z-10 relative">
+        <nav class="flex items-center justify-between px-4 py-10">
+          <div>
+            <a href="#">
+              <img src="./assets/images/logo.svg" alt="" />
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img src="./assets/icons/icon-hamburger.svg" alt="" />
+            </a>
+          </div>
+          <ul class="hidden">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div
+          class="flex flex-col items-center justify-center gap-5 py-20 px-12 text-center text-white">
+          <h1 class="text-4xl font-medium">A modern pushing platform</h1>
+          <p class="font-light">
+            Grow your audience and build your online brand
+          </p>
+          <div class="mt-5 flex items-center gap-5 font-bold">
+            <a href="#" class="bg-white text-[#ff525d] px-4 py-2 rounded-3xl hover:bg-white/40 hover:text-white transition-all duration-300 ease-in-out"
+              >Star for Free</a
+            >
+            <a href="#" class="border border-white px-4 py-2 rounded-3xl hover:bg-white hover:text-[#ff525d] transition-all duration-300 ease-in-out"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="py-20 px-10 text-center">
+        <h2 class="text-2xl font-medium">Designed for the future</h2>
+        <div class="my-8 w-full">
+          <img src="./assets/images/illustration-editor-mobile.svg" alt="" class="m-auto"/>
+        </div>
+        <div class="mb-8">
+          <div class="mb-8">
+            <h3 class="font-medium text-2xl mb-3">
+              Introducing and extensible editor
+            </h3>
+            <p class="text-[#4b5862] font-light">
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown. Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-medium text-2xl mb-3">Robust content management</h3>
+            <p class="text-[#4b5862] font-light">
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="mid mt-[150px] pt-[200px] px-10 pb-[100px] text-white relative text-center rounded-tr-[100px] rounded-bl-[100px]">
+        <div class="absolute -top-[210px] w-full left-0 w-[200px]">
+          <img src="./assets/images/illustration-phones.svg" alt="" class="m-auto"/>
+        </div>
+        <div>
+          <div class="sm:pt-[200px]">
+            <h2 class="text-4xl font-medium mb-5">
+              State of the Art Infrastructure
+            </h2>
+            <p class="font-light">
+              With reliability and speed in mind, worldwide data centers provide
+              the backbone for ultra-fast connectivity. This ensures your site
+              will load instantly, no matter where your readers are, keeping
+              your site competitive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-16 px-10 text-center pb-[100px]">
+        <div class="mb-6 w-full">
+          <img src="./assets/images/illustration-laptop-mobile.svg" alt="" class="m-auto"/>
+        </div>
+        <div>
+          <div class="mb-8">
+            <h3 class="font-medium text-2xl mb-3">Free, open, simple</h3>
+            <p class="text-[#4b5862] font-light">
+              Blogr is a free and open source application backed by a large
+              community of helpful developers. It supports features such as code
+              syntax highlighting, RSS feeds, social media integration,
+              third-party commenting tools, and works seamlessly with Google
+              Analytics. The architecture is clean and is relatively easy to
+              learn.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-medium text-2xl mb-3">Powerful tooling</h3>
+            <p class="text-[#4b5862] font-light">
+              Batteries included. We built a simple and straightforward CLI tool
+              that makes customization and deployment a breeze, but capable of
+              producing even the most complicated sites.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-[#25252d] text-white text-center rounded-tr-[100px] flex flex-col gap-12 justify-center py-10 w-full">
+      <div>
+        <img src="./assets/images/logo.svg" alt="" class="m-auto"/>
+      </div>
+      <div class="flex flex-col gap-6">
+        <div>
+          <h2 class="mb-4 font-semibold text-lg">Product</h2>
+          <ul class="font-light">
+            <li><a href="">Overview</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Marketplace</a></li>
+            <li><a href="">Features</a></li>
+            <li><a href="">Integrations</a></li>
+          </ul>
+        </div>
+        <div>
+            <h2 class="mb-4 font-semibold text-lg">Company</h2>
+            <ul class="font-light">
+                <li><a href="">About</a></li>
+                <li><a href="">Team</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Careers</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-4 font-semibold text-lg">Connect</h2>
+            <ul class="font-light">
+                <li><a href="">Contact</a></li>
+                <li><a href="">Newsletter</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
+      </div>
+    </footer>
+  </body>
+</html>
