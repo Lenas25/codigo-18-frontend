@@ -1,8 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap");
 
+*{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: black;
   color: white;
+  scroll-behavior: smooth;
+}
+
+header, section{
+  animation: fade-in 1s both;
+  animation-timeline: view();
+  animation-range:  cover 10% cover 50%;
+}
+
+@keyframes fade-in {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 
