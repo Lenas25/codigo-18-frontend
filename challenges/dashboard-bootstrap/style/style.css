@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7f5;
+    height: 100vh;
+    color: #1f1e30;
+}
+
+.row{
+    height: 100vh;
+    padding: 40px;
+}
+
+.sidebar-nav{
+    position:relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #1f1e30 !important;
+    border-radius: 30px;
+    color: white  !important;
+    padding:10px;
+}
+
+.offcanvas-body{
+    padding: 0 !important;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.items>div{
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.items>div>a, .drop>a{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+.items>div:hover, .drop:hover{
+    background-color: #d8f275;
+}
+
+.items>div:hover a, .drop:hover{
+    color: #1f1e30;
+}
+
+.drop{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+@media (min-width: 992px) {
+
+    .offcanvas-backdrop{
+        display: none;
+    }
+
+    .sidebar-nav{
+        transform: none !important;
+        visibility: visible !important;
+    }
+    nav{
+        display: none !important;
+    }
+}
