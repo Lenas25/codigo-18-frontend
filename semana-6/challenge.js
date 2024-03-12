@@ -140,3 +140,28 @@ console.log(fibonacci(10))
 const anagrama=(word1, word2)=> word1.split("").sort().join("")==word2.split("").sort().join("")
 
 console.log(anagrama("rama","roma")) //false
+
+
+// Aplanar un array
+function steamrollArray(arr) {
+  // Base case
+  const flattenedArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      //Si es un array se llama a la misma funcion para que se vuelva a evaluar
+      
+      flattenedArray.push(...steamrollArray(arr[i]));
+      console.log(flattenedArray)
+    } else {
+      // Copy contents that are not arrays
+      flattenedArray.push(arr[i]);
+    }
+  }
+  return flattenedArray;
+};
+
+//caso 1
+//1 es un numero por lo que se agrega al array
+//2 es un array por lo que se llama a la funcion, se crea un nuevo array y se agrega el 2
+//3 es un array por lo que se llama a la funcion, se crea un nuevo array y se agrega el 3
+steamrollArray([1, [2], [3, [[4]]]]);
