@@ -14,14 +14,6 @@
   transition: all 0.3s ease;
 }
 
-.close  {
-  display: none;
-}
-
-.active{
-  display: block !important;
-}
-
 body {
   font-family: "M PLUS Rounded 1c", sans-serif;
   background-color: #eeeff1;
