@@ -185,7 +185,7 @@ input,button{
         height: 100%;
     }
 
-    form{
+    .form{
         flex-direction: column;
         width: 90%;
     }
