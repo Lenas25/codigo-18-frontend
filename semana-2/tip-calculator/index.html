@@ -5,38 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Tip Calculator | LenaDev</title>
   </head>
   <body>
     <main>
       <h2>
-        BY LENADEV
+        BY LENADEVS
       </h2>
-      <form>
+      <div class="form">
           <div class="form-left">
             <div>
               <label for="input-bill" class="text-title">Bill</label>
-              <div class="input">
+              <div id="container-bill" class="input">
                 <img src="images/icon-dollar.svg" alt="" />
-                <input id="input-bill" type="text" placeholder="0" />
+                <input id="input-bill" type="text" placeholder="0" autocomplete="off"/>
               </div>
             </div>
             <div>
               <p class="text-title">Select Tip %</p>
-              <div class="tip">
-                <button>5%</button>
-                <button>10%</button>
-                <button>15%</button>
-                <button>25%</button>
-                <button>50%</button>
-                <input type="text" placeholder="Custom" />
+              <div id="container-percentage" class="tip">
               </div>
             </div>
             <div>
               <label for="number-people" class="text-title">Number of People</label>
-              <div class="input">
-                <img src="./images/icon-person.svg" alt="" />
-                <input id="number-people" type="text" placeholder="0" />
+              <div id="container-people" class="input">
+                <img src="./images/icon-person.svg" alt=""/>
+                <input id="number-people" type="text" placeholder="0" autocomplete="off"/>
               </div>
             </div>
           </div>
@@ -57,10 +53,10 @@
                     <span>$0.00</span>
                 </div>
             </div>
-            <button type="reset">RESET</button>
+            <button type="reset" id="reset">RESET</button>
           </div>
           
-      </form>
+      </div>
     </main>
   </body>
 </html>

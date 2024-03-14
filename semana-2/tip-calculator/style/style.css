@@ -7,18 +7,23 @@
 }
 
 :root{
-    --strong-cyan:hsl(172, 67%, 45%);
-    --very-dark-cyan:hsl(183, 100%, 15%);
+    --strong-cyan:#26c0ab;
+    --very-dark-cyan:#00494d;
     --dark-gray-cyan:hsl(186, 14%, 43%);
     --gray-cyan:hsl(184, 14%, 56%);
     --light-gray-cyan:hsl(185, 41%, 84%);
     --very-light-gray-cyan:hsl(189, 41%, 97%);
 }
 
+.active{
+    border:2px solid var(--strong-cyan);
+}
+
 body{
     font-family: 'Space Mono', monospace;
     font-weight: 700;
     background-color: var(--light-gray-cyan);
+    height: 100vh;
 }
 
 main{
@@ -26,7 +31,8 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
+    padding: 50px 0;
 }
 
 main>h2{
@@ -35,7 +41,7 @@ main>h2{
     color: var(--very-dark-cyan);
 }
 
-form{
+.form{
     background-color: white;
     display: flex;
     gap:50px;
@@ -45,12 +51,13 @@ form{
     width: 800px;
 }
 
-form>div{
+.form>div{
     flex:1;
 }
 
 .form-left>div{
     margin-bottom: 30px;
+
 }
 
 .input{
@@ -64,7 +71,7 @@ form>div{
 }
 
 .input>input{
-    color: var(--dark-gray-cyan);
+    color: var(--very-dark-cyan);
     border:none;
     outline: none;
     text-align: right;
@@ -82,18 +89,18 @@ form>div{
 
 .tip{
     display: grid;
-    grid-template-columns: repeat(3,100px);
+    grid-template-columns: repeat(3,minmax(100px,1fr));
     gap: 10px;
     margin-top:10px;
 }
 
 .tip>input{
-    border:none;
+    border-radius: 5px;
     outline: none;
     background-color: var(--very-light-gray-cyan);
     text-align: center;
     font-size: 19px;
-    color: var(--dark-gray-cyan);
+    color: var(--very-dark-cyan);
 }
 
 input::placeholder{
@@ -113,7 +120,7 @@ input::placeholder{
 }
 
 .tip>button:hover{
-    background-color: var(--light-gray-cyan);
+    background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
 }
 
@@ -149,7 +156,7 @@ input::placeholder{
 
 .amount>span{
     color: var(--strong-cyan);
-    font-size: 40px;
+    font-size: calc(20px + 1vw);
 }
 
 .form-right>button{
@@ -164,7 +171,26 @@ input::placeholder{
     transition: all 0.3s;
 }
 
+.form-right>button:hover{
+    background-color: var(--strong-cyan);
+}
+
 input,button{
     font-family: 'Space Mono', monospace;
     font-weight: 700;
+}
+
+@media (max-width: 900px){
+    body{
+        height: 100%;
+    }
+
+    form{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .tip{
+        grid-template-columns: repeat(2,minmax(50px,1fr));
+    }
 }
