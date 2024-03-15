@@ -19,6 +19,11 @@
     border:2px solid var(--strong-cyan);
 }
 
+.active-btn{
+    background-color: var(--strong-cyan) !important;
+    color: var(--very-dark-cyan) !important;
+}
+
 body{
     font-family: 'Space Mono', monospace;
     font-weight: 700;

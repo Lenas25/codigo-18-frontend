@@ -5,57 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./js/selectors.js"></script>
+    <script defer src="./js/data.js"></script>
+    <script defer src="./js/util.js"></script>
     <script defer src="./js/main.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Tip Calculator | LenaDev</title>
   </head>
   <body>
     <main>
-      <h2>
-        BY LENADEVS
-      </h2>
+      <h2>BY LENADEVS</h2>
       <div class="form">
-          <div class="form-left">
-            <div>
-              <label for="input-bill" class="text-title">Bill</label>
-              <div id="container-bill" class="input">
-                <img src="images/icon-dollar.svg" alt="" />
-                <input id="input-bill" type="text" placeholder="0" autocomplete="off"/>
-              </div>
-            </div>
-            <div>
-              <p class="text-title">Select Tip %</p>
-              <div id="container-percentage" class="tip">
-              </div>
-            </div>
-            <div>
-              <label for="number-people" class="text-title">Number of People</label>
-              <div id="container-people" class="input">
-                <img src="./images/icon-person.svg" alt=""/>
-                <input id="number-people" type="text" placeholder="0" autocomplete="off"/>
-              </div>
+        <div class="form-left">
+          <div>
+            <label
+              id="container-label-bill"
+              for="input-bill"
+              class="text-title flex justify-between">
+              Bill
+            </label>
+            <div id="container-bill" class="input">
+              <img src="images/icon-dollar.svg" alt="" />
+              <input
+                id="input-bill"
+                type="text"
+                placeholder="0"
+                autocomplete="off" />
             </div>
           </div>
-          <div class="form-right">
-            <div class="result">
-                <div class="amount">
-                    <div>
-                      <h3>Tip Amout</h3>
-                      <p>/ person</p>
-                    </div>
-                    <span>$0.00</span>
-                </div>
-                <div class="amount">
-                    <div>
-                      <h3>Total</h3>
-                      <p>/ person</p>
-                    </div>
-                    <span>$0.00</span>
-                </div>
-            </div>
-            <button type="reset" id="reset">RESET</button>
+          <div>
+            <p class="text-title">Select Tip %</p>
+            <div id="container-percentage" class="tip"></div>
           </div>
-          
+          <div>
+            <label
+              id="container-label-people"
+              for="number-people"
+              class="text-title flex justify-between"
+              >Number of People</label
+            >
+
+            <div id="container-people" class="input">
+              <img src="./images/icon-person.svg" alt="" />
+              <input
+                id="number-people"
+                type="text"
+                placeholder="0"
+                autocomplete="off" />
+            </div>
+          </div>
+        </div>
+        <div class="form-right">
+          <div class="result">
+            <div class="amount">
+              <div>
+                <h3>Tip Amout</h3>
+                <p>/ person</p>
+              </div>
+              <span id="per-person">$0.00</span>
+            </div>
+            <div class="amount">
+              <div>
+                <h3>Total</h3>
+                <p>/ person</p>
+              </div>
+              <span id="total">$0.00</span>
+            </div>
+          </div>
+          <button type="reset" id="btn-calculate">CALCULATE</button>
+        </div>
       </div>
     </main>
   </body>
