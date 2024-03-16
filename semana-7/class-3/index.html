@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/main.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./js/users.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./js/main.js"></script>
+    <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Login Example | LenaDevs</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="relative">
+      <img
+        src="./assets/images/decoration.svg"
+        alt=""
+        class="absolute top-0 z-0 left-0 w-full" />
+    </div>
+    <main class="h-screen max-w-md mx-auto relative z-10">
+      <div class="p-6 h-full">
+        <div class="flex justify-between items-center">
+          <div class="">
+            <div class="font-bold text-xl flex gap-2 items-center">
+              <h2>Login Account</h2>
+              <img src="./assets/icons/user.svg" alt="" />
+            </div>
+            <h4 class="text-sm mt-1">Welcome Back!</h4>
+          </div>
+          <div>
+            <img src="./assets/images/languages.svg" alt="" />
+          </div>
+        </div>
+        <div class="mt-10">
+          <p class="text-6xl text-center">
+            <span class="font-semibold">Mini</span>
+            <span class="font-bold text-[#ffc600]">Shop</span>
+          </p>
+        </div>
+        <form class="mt-10 flex flex-col gap-5">
+          <div>
+            <input
+              class="w-full p-3 border border-black/50 outline-none rounded-md"
+              type="email"
+              placeholder="Enter email id"
+              name="email" />
+          </div>
+          <div>
+            <input
+              class="w-full p-3 border border-black/50 outline-none rounded-md"
+              type="password"
+              placeholder="Enter Password"
+              name="password" />
+          </div>
+          <div class="mt-6">
+            <button class="py-3 bg-[#ffc600] w-full rounded-md" type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
 </html>
