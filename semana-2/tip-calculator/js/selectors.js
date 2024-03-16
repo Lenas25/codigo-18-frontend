@@ -8,4 +8,5 @@ const containerPercentage = document.querySelector("#container-percentage");
 const btnCalculate = document.querySelector("#btn-calculate");
 const total = document.querySelector("#total");
 const totalPerPerson=document.querySelector("#per-person");
-const customInput=document.querySelector("#container-percentage input[type='text']");
+const containerLabelBill=document.querySelector("#container-label-bill");
+const containerLabelPeople=document.querySelector("#container-label-people");

@@ -24,7 +24,7 @@ function validateInputIfNumber(element, type, container, input) {
   
     /**
      * Si la primera letra de la palabra es igual a 0 vamos a colocar un border
-     * rojos en el input y NO vamos a des seleccionar el button, por ede uso
+     * rojos en el input y NO  vamos a des seleccionar el button, por ede uso
      * return para que si entra a la condicion la funcion termine
      */
     if (inputValue[0] === "0") {

@@ -9,17 +9,43 @@ containerPeople.onclick = function () {
 
 //evento para validar el input de bill
 inputBill.onkeyup = (event) => {
-    validateInputIfNumber(event, "event", containerBill, inputBill);
+    const validate=validateInputIfNumber(event, "event", containerBill, inputBill);
+    const message=containerLabelBill.querySelector("p");
+
+    if(!validate){
+      if(!message){
+        const message=document.createElement("p");
+        message.innerHTML="Can't be zero";
+        message.classList.add("text-red-500","mt-1");
+        containerLabelBill.appendChild(message);
+      }
+    }else{
+      if(message)containerLabelBill.removeChild(message);
+    }
 };
 
 //evento para validar el input de people
 inputPeople.onkeyup = (event) => {
-    validateInputIfNumber(event, "event", containerPeople, inputPeople);
+    const validate=validateInputIfNumber(event, "event", containerPeople, inputPeople);
+
+    const message=containerLabelPeople.querySelector("p");
+
+    if(!validate){
+      if(!message){
+        const message=document.createElement("p");
+        message.innerHTML="Can't be zero";
+        message.classList.add("text-red-500","mt-1");
+        containerLabelPeople.appendChild(message);
+      }
+    }else{
+      if(message)containerLabelPeople.removeChild(message);
+    }
 };
 
 btnCalculate.onclick = function () {
     //se procede a hacer la operacion matematica
     //paso1:obtener los valores de nuestro input y botones
+    if(inputBill.value===""&&inputPeople.value==="")return;
     const billValue=Number(inputBill.value);
     const peopleValue=Number(inputPeople.value);
     const getValuePercentage=percentages.find((percentage)=>percentage.isCheck
@@ -47,6 +73,8 @@ btnCalculate.onclick = function () {
     });
 
     renderPercentageButtons(percentages);
+    containerBill.classList.remove("border","border-2", "border-[#26c0ab]");
+    containerPeople.classList.remove("border","border-2", "border-[#26c0ab]");
 }
 
 /**
@@ -113,7 +141,7 @@ function renderButtons(text, index) {
 function setButtonTip(element) {
   // Paso1: Obtener el indice del button
   const buttonIndex = element.dataset.index;
-  // Paso2: Entrar al array de objecto y buscar por indicie y cambiar la
+  // Paso2: Entrar al array de objecto y buscar por indice y cambiar la
   // propiedad isCheck = true
   percentages[buttonIndex].isCheck = true;
   // Paso3: Modificamos el valor de las otra opciones false
