@@ -6,6 +6,12 @@ const error = document.querySelector("#error");
 //variables para el container
 const containerTask = document.querySelector("#container-task");
 
+const modal= document.querySelector("#modal");
+const inputEditTask = document.querySelector("#input-edit-task");
+const formEdit= document.querySelector("#form-edit");
+//cuando iniciemos vamos a colocar la clase hidden
+modal.classList.add("hidden");
+
 //vamos a validar en funcion si existe el localstorage, si no existe retorna un null
 const validateExistLocalStorage = () => localStorage.getItem("tasks");
 
@@ -109,33 +115,10 @@ function check(id) {
   cancelEdit(id);
 }
 
-
 //funcion para editar la tarea, recorremos el array de tareas y si el id de la tarea es igual al id que le pasamos a la funcion, cambiamos el nombre de la tarea y volvemos a renderizar las tareas
-function edit(id) {
-  /*vamos a mostrar un modal para cambiar el nombre de la tarea
-   const { value: newtask } = await Swal.fire({
-  //   title: "Change the task",
-  //   input: "text",
-  //   inputPlaceholder: "Enter your new task"
-   });
-   if (newtask) {
-  //   Swal.fire(`Entered task: ${newtask}`);
-   }
-  recorremos el array de tareas
-  tasks.forEach((task) => {
-  //   //si el id de la tarea es igual al id que le pasamos a la funcion, cambiamos el nombre de la tarea
-  //   if (task.id === id) {
-  //     task.name = newtask;
-  //     //guardamos en localstorage
-  //     saveTaskLocalStorage();
-  //     //volvemos a renderizar las tareas
-  //     renderTasks();
-  //   }
-  });*/
-
+function editWithoutModal(id) {
   //primero evaluamos que la tarea no este finalizada
   const task = tasks.find((task) => task.id === id);
-  if(task.status === 3) return;
 
   //vamos a editar de forma inline
   //variable del contenedor de la tarea
@@ -157,8 +140,32 @@ function edit(id) {
   taskContainer.innerHTML = html;
 }
 
+
+function edit(id) {
+  modal.classList.remove("hidden");
+  //buscar a la tarea por id
+  const task= tasks.find((task) => task.id === id);
+  inputEditTask.value = task.name;
+  inputEditTask.setAttribute("data-id", id);
+  inputEditTask.focus();
+}
+
+function closeModal(){
+  modal.classList.add("hidden");
+}
+
+formEdit.onsubmit = (event) => {
+  event.preventDefault();
+  const id= Number(inputEditTask.getAttribute("data-id"));
+  const task= tasks.find((task) => task.id === id);
+  task.name= inputEditTask.value;
+  saveTaskLocalStorage();
+  closeModal();
+  cancelEdit(id);
+}
+
 //funcion para guardar editar la tarea, primero validamos que el input no este vacio, luego buscamos la tarea por el id y actualizamos el nombre de la tarea, guardamos en localstorage y volvemos a renderizar solo la tarea guardada
-function saveEdit(id) {
+function saveEditWithModal(id) {
   //capturamos el contenedor y el input
   const editInput = document.querySelector(`#input-task-edit-${id}`);
 
