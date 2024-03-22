@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./js/app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo List | LenaDevs</title>
+  </head>
+  <body class="bg-gray-100">
+    <main class="max-w-md mx-auto p-6">
+      <form action="" id="form" class="flex justify-between">
+        <input
+          id="input-task"
+          class="w-full border py-2 px-4 rounded-tl-lg rounded-bl-lg outline-none"
+          name="input"
+          type="text"
+          placeholder="Enter a task" 
+          autocomplete="off"/>
+        <button 
+        class="bg-purple-300 px-4 rounded-tr-lg rounded-br-lg">
+          Create
+        </button>
+      </form>
+      <span id="error" class="text-xs text-red-500 mt-2 font-semibold"></span>
+      <section id="container-task" class="mt-10 flex flex-col gap-5">
+      </section>
+    </main>
+  </body>
+</html>
