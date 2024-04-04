@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
     <title>MultiStep Form | LenaDev</title>
   </head>
   <body>
@@ -44,27 +45,91 @@
             <h1>Personal info</h1>
             <p>Please provide your name, email, address, and phone number.</p>
           </div>
-          <form action="">
-            <div>
-              <label for="name">Name</label>
-              <input type="text" placeholder="e.g. Stephen King" />
+          <div class="flex flex-col h-full justify-between">
+            <form action="">
+              <div>
+                <label for="name">Name</label>
+                <input 
+                id="name" 
+                name="name" 
+                type="text" 
+                placeholder="e.g. Stephen King" 
+                class="text-[#02295a] focus:ring-1 ring-[#473dff]"/>
+              </div>
+              <div>
+                <label for="email">Email Address</label>
+                <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                placeholder="e.g. stephenking@lorem.com" 
+                class="text-[#02295a] focus:ring-1 ring-[#473dff]"/>
+              </div>
+              <div>
+                <label for="phone">Phone Number</label>
+                <input 
+                id="phone" 
+                name="phone" 
+                type="text" 
+                placeholder="e.g. +1 234 567 890" 
+                class="text-[#02295a] focus:ring-1 ring-[#473dff]"/>
+              </div>
+            </form>
+            <div class="btn-next-step">
+              <button class="next" type="submit">Next Step</button>
             </div>
-            <div>
-              <label for="email">Email Address</label>
-              <input type="email" placeholder="e.g. stephenking@lorem.com" />
-            </div>
-            <div>
-              <label for="phone">Phone Number</label>
-              <input type="text" placeholder="e.g. +1 234 567 890" />
-            </div>
-          </form>
-          <div class="btn-next-step">
-            <button class="next" type="submit">Next Step</button>
           </div>
         </div>
       </div>
-      <div class="btn-next-step-footer">
-        <button class="next" type="submit">Next Step</button>
+      <div class="form-second-step hidden ">
+        <div class="form-info">
+          <div class="title">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email, address, and phone number.</p>
+          </div>
+          <div class="flex flex-col h-full justify-between">
+            <form action="">
+              <div>
+                <label for="name">Name</label>
+                <input 
+                id="name" 
+                name="name" 
+                type="text" 
+                placeholder="e.g. Stephen King" 
+                class="text-[#02295a] focus:ring-1 ring-[#473dff]"/>
+              </div>
+              <div>
+                <label for="email">Email Address</label>
+                <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                placeholder="e.g. stephenking@lorem.com" 
+                class="text-[#02295a] focus:ring-1 ring-[#473dff]"/>
+              </div>
+              <div>
+                <label for="phone">Phone Number</label>
+                <input 
+                id="phone" 
+                name="phone" 
+                type="text" 
+                placeholder="e.g. +1 234 567 890" 
+                class="text-[#02295a] focus:ring-1 ring-[#473dff]"/>
+              </div>
+            </form>
+            <div class="btn-next-step">
+              <button class="btn-next-desktop" type="button">Next Step</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-next-back-step-footer">
+        <div>
+          <button class="btn-back" type="button">Go Back</button>
+        </div>
+        <div>
+          <button class="btn-next bg-[#02295a]" type="button">Next Step</button>
+        </div>
       </div>
     </main>
   </body>

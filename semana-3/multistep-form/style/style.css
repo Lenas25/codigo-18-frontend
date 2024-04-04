@@ -20,8 +20,8 @@
 }
 
 :root{
-    --titles: hsl(213, 96%, 18%);
-    --menu-back: hsl(243, 100%, 62%);
+    --titles: #02295a;
+    --menu-back: #473dff;
     --ligth-blue: hsl(228, 100%, 84%);
     --active-menu: hsl(206, 94%, 87%);
     --strawberry-red: hsl(354, 84%, 57%);
@@ -53,10 +53,9 @@ p, input::placeholder{
 
 main{
     padding:15px;
-    width: 50%;
     height: 65vh;
     display: flex;
-    gap:80px;
+    gap:60px;
     align-items: center;
     justify-content: flex-start;
     background-color: white;
@@ -127,26 +126,34 @@ main{
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     gap:30px;
+    padding-right: 20px;
 }
 
 .form-info{
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 20px;
+    padding:30px 0;
+    height: 100%;
 }
 
-.form-info>div>h1{
+.form-info>.title>h1{
+    font-size: 30px;
+
+}
+
+.form-info form>h1{
+    font-size: 20px;
     margin-bottom: 5px;
 }
 
 
-.form-info>form>div{
+.form-info form>div{
     gap:5px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 form>div>label{
@@ -169,10 +176,10 @@ form>div>input::placeholder{
 
 .btn-next-step{
     align-self: flex-end;
+    justify-self: flex-end;
 }
 
 .btn-next-step>button{
-    align-self: flex-end;
     width: fit-content;
     font-family: 'Ubuntu', sans-serif;
     outline: none;
@@ -185,12 +192,12 @@ form>div>input::placeholder{
     cursor:pointer;
 }
 
-.btn-next-step-footer{
+.btn-next-back-step-footer{
     display: none;
 }
 
 /* sm */
-@media (max-width:640px){
+@media (max-width:768px){
     
     main{
         position: relative;
@@ -246,20 +253,18 @@ form>div>input::placeholder{
         display: none;
     }
     
-    .btn-next-step-footer{
-        display: block;
+    .btn-next-back-step-footer{
         position: absolute;
         background-color: white;
         width: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         padding:20px;
         right: 0;
         bottom: 0;
     }
 
-    .btn-next-step-footer>button{
-        align-self: flex-end;
+    .btn-next{
         width: fit-content;
         font-family: 'Ubuntu', sans-serif;
         outline: none;
@@ -271,32 +276,34 @@ form>div>input::placeholder{
         background-color: var(--titles);
         cursor:pointer;
     }
+
+    .btn-back{
+        color: var(--paragraph);
+        width: fit-content;
+        font-family: 'Ubuntu', sans-serif;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        padding:15px 25px;
+        font-size: 15px;
+        cursor:pointer;
+    }
 }
 
 /* md */
 @media (max-width:768px){
-    main{
-        width: 90%;
-    }
 }
 
 /* lg */
 @media (max-width:1024px){
 
-    main{
-        gap:50px;
-        width: 80%;
-    }
 }
 
 /* xl */
 @media (max-width:1280px){
-    main{
-        width: 70%;
-    }
 
     .menu{
-        width: 30%;
+        width: 50%;
         padding:40px 20px;
     }
 
