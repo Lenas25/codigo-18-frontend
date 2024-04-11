@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { InputTask, Modal } from "./components";
+import { InputTask, Modal, UpdateForm, DeleteForm, CheckForm } from "./components";
 import { tasks, saveTaskLocalStorage } from "../utils";
+import {v4 as uuidv4} from 'uuid';
 
 export default function App() {
   // Es el estado de la lista de tareas
@@ -11,6 +12,8 @@ export default function App() {
   const [openModal, setOpenModal] = useState(false);
   // creamos una variable para saber a que tarea le dimos click
   const [currentTask, setCurrentTask] = useState(null);
+  const [isOpenDelete, setIsOpenDelete] = useState(false);
+  const [isOpenCheck, setIsOpenCheck] = useState(false);
 
   // Funcion que se encarga de capturar el valor del input
   const handleInputTask = (event) => {
@@ -18,7 +21,9 @@ export default function App() {
   };
 
   const handleListTask = (task) => {
-    task.id = listTasks.length + 1;
+    //el id de la tarea es el id de la ultima tarea + 1, una solucion para que no se repitan los id listTasks[listTasks.length-1].id + 1
+    // otra solucion es usar un uuid
+    task.id = uuidv4();
     const newTask = [...listTasks, task];
     // cuando la funcion terminar recien se va a actualizar el estado
     setListTask(newTask);
@@ -47,34 +52,46 @@ export default function App() {
   const handleCheckTask = (task) => {
     //buscamos la tarea que queremos editar
     const searchTask = listTasks.find((element) => element.id === task.id);
-    //editamos el nombre de la tarea
+    //editamos el estado de la tarea
     searchTask.status = 3;
-
-    //guardamos en localstorage
     saveTaskLocalStorage(listTasks);
     //para volver a renderizar la vista
     //se renderiza la vista ya que se cambio el estado y cuando se cambia un estado se renderiza la vista
     setListTask([...listTasks]);
   };
 
+  const handleCurrentCheckTask = (task) => {
+    setCurrentTask(task);
+    setIsOpenCheck(true);
+  }
+
+  const handleDeleteTask = (task) => {
+    const newTasks = listTasks.filter((t) => t.id !== task.id);
+    saveTaskLocalStorage(newTasks);
+    setIsOpenDelete(false);
+  };
+
   const handleTaskStatus = (task) => {
     return task.status === 3 ? (
       <>
-        <h3 className="line-through font-thin text-gray-500">
-          {task.name}
-        </h3>
+        <h3 className="line-through font-thin text-gray-500">{task.name}</h3>
       </>
     ) : (
       <>
         <h3>{task.name}</h3>
         <div className="flex gap-5">
-          <button onClick={() => handleCheckTask(task)}>✅</button>
+          <button onClick={() => handleCurrentCheckTask(task)}>✅</button>
           <button onClick={() => handleCurrentTask(task)}>📝</button>
-          <button>🗑️</button>
+          <button onClick={() => handleCurrentDeleteTask(task)}>🗑️</button>
         </div>
       </>
-    )
-};
+    );
+  };
+
+  const handleCurrentDeleteTask = (task) => {
+    setCurrentTask(task);
+    setIsOpenDelete(true);
+  };
 
   return (
     <>
@@ -101,12 +118,36 @@ export default function App() {
       </main>
       {/* si currentTask existe entonces se renderiza el modal */}
       {currentTask && (
+        <Modal open={openModal} setOpenModal={setOpenModal} title="Edit Task">
+          <UpdateForm
+            currentTask={currentTask}
+            handleSaveEditedTask={handleSaveEditedTask}
+          />
+        </Modal>
+      )}
+      {currentTask && (
         <Modal
-          open={openModal}
-          setOpenModal={setOpenModal}
-          currentTask={currentTask}
-          handleSaveEditedTask={handleSaveEditedTask}
-        />
+          open={isOpenDelete}
+          setOpenModal={setIsOpenDelete}
+          title="Delete Task">
+          <DeleteForm
+            currentTask={currentTask}
+            setOpenModal={setIsOpenDelete}
+            handleDeleteTask={handleDeleteTask}
+          />
+        </Modal>
+      )}
+      {currentTask && (
+        <Modal
+          open={isOpenCheck}
+          setOpenModal={setIsOpenCheck}
+          title="Mark Check Task">
+          <CheckForm
+            currentTask={currentTask}
+            setOpenModal={setIsOpenCheck}
+            handleCheckTask={handleCheckTask}
+          />
+        </Modal>
       )}
     </>
   );
