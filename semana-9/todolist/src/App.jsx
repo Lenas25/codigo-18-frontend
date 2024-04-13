@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   InputTask,
   Modal,
@@ -6,42 +6,40 @@ import {
   DeleteForm,
   CheckForm,
 } from "./components";
-import { tasks, saveTaskLocalStorage } from "../utils";
 import { v4 as uuidv4 } from "uuid";
-import { getTasks, createTask, updateTask, deleteTask} from "./services/httpAPI";
+import {
+  getTasks,
+  createTask,
+  updateTask,
+  deleteTask,
+} from "./services/httpAPI";
+import useGetTasks from "./hooks/useGetTasks";
+import useOpenModals from "./hooks/useOpenModals";
 
 export default function App() {
-  // Es el estado de la lista de tareas
-  const [listTasks, setListTask] = useState(tasks);
+  // Es el estado de la lista de tareas con custom hook
+  const { listTasks, setListTask } = useGetTasks();
   // Es el estado del input
   const [task, setTask] = useState("");
   // creamos una variable para saber a que tarea le dimos click
   const [currentTask, setCurrentTask] = useState(null);
-  // se crea un estado para saber si el modal esta abierto o cerrado de todos los 3 modales que tenemos e inicializamos en false
-  const [isOpen, setIsOpen] = useState({
-    check: false,
-    edit: false,
-    delete: false,
-  });
-
-  const fetchTasks = async () => {
-    //se utiliza el await para esperar la respuesta de la promesa
-    const tasksData=await getTasks();
-    setListTask(tasksData);
-  }
-
-  //use effect es un hook que se ejecuta cuando el componente se monta, se actualiza o se desmonta, puede ejecutar codigo asincrono y sincrono
-  useEffect(() => {
-    fetchTasks();
-  },[]);
+  
+  const { isOpen, handleOpen } = useOpenModals();
 
   // Funcion que se encarga de capturar el valor del input
   const handleInputTask = (event) => {
     setTask(event.target.value);
   };
 
+  // Funcion que se encarga de abrir el modal y guardar la tarea a la que le dimos click
+  const handleCurrentTask = (task, modalType) => {
+    //paso 1: abrir el modal
+    handleOpen(modalType);
+    setCurrentTask(task);
+  };
+
+  //crear una tarea
   const handleListTask = async (task) => {
-    //el id de la tarea es el id de la ultima tarea + 1, una solucion para que no se repitan los id listTasks[listTasks.length-1].id + 1
     // otra solucion es usar un uuid
     // task.id = uuidv4();
     const taskAdded = await createTask(task);
@@ -52,23 +50,7 @@ export default function App() {
     setTask("");
   };
 
-  const handleCurrentCheckTask = (task) => {
-    setCurrentTask(task);
-    handleOpen("check");
-  };
-
-  const handleCurrentTask = (task) => {
-    //paso 1: abrir el modal
-    handleOpen("edit");
-    setCurrentTask(task);
-  };
-
-  const handleCurrentDeleteTask = (task) => {
-    setCurrentTask(task);
-    //actualizamos el estado para colocar el modal en true
-    handleOpen("delete");
-  };
-
+  //editar una tarea
   const handleSaveEditedTask = async (task, editedText) => {
     //buscamos la tarea que queremos editar
     //cuando hacemos la busque el searchTask es elemento del listTasks, si altero el searchTask tambien altero el listTasks porque es una referencia a la memoria
@@ -80,35 +62,28 @@ export default function App() {
     handleOpen("edit");
   };
 
+  //marcar una tarea como completada
   const handleCheckTask = async (task) => {
     //buscamos la tarea que queremos editar
     const searchTask = listTasks.find((element) => element.id === task.id);
     //editamos el estado de la tarea
     searchTask.status = 2;
-    
+
     await updateTask(searchTask);
     handleOpen("check");
-
   };
 
+  //eliminar una tarea
   const handleDeleteTask = async (task) => {
-    const filteredTasks=listTasks.filter((t) => t.id !== task.id);
+    const filteredTasks = listTasks.filter((t) => t.id !== task.id);
     // saveTaskLocalStorage(newTasks);
     await deleteTask(task);
     setListTask(filteredTasks);
     //actualizamos el estado para colocar el modal en false y cerrarlo
     handleOpen("delete");
-
   };
 
-// en este metodo se abre y cierra los modales con el tipo pasa como propiedad y el cambio de estado se basa en el estado previo
-  const handleOpen = (modalType) => {
-    setIsOpen({
-      ...isOpen,
-      [modalType]: !isOpen[modalType],
-    });
-  }
-
+  //funcion que se encarga de renderizar la tarea segun el estado
   const handleTaskStatus = (task) => {
     return task.status === 2 ? (
       <>
@@ -118,9 +93,9 @@ export default function App() {
       <>
         <h3>{task.name}</h3>
         <div className="flex gap-5">
-          <button onClick={() => handleCurrentCheckTask(task)}>✅</button>
-          <button onClick={() => handleCurrentTask(task)}>📝</button>
-          <button onClick={() => handleCurrentDeleteTask(task)}>🗑️</button>
+          <button onClick={() => handleCurrentTask(task, "check")}>✅</button>
+          <button onClick={() => handleCurrentTask(task, "edit")}>📝</button>
+          <button onClick={() => handleCurrentTask(task, "delete")}>🗑️</button>
         </div>
       </>
     );
@@ -150,9 +125,10 @@ export default function App() {
       </main>
       {/* si currentTask existe entonces se renderiza el modal */}
       {currentTask && (
-        <Modal open={isOpen.edit} 
-        handleClose={()=>handleOpen("edit")} 
-        title="Edit Task">
+        <Modal
+          open={isOpen.edit}
+          handleClose={() => handleOpen("edit")}
+          title="Edit Task">
           <UpdateForm
             currentTask={currentTask}
             handleSaveEditedTask={handleSaveEditedTask}
@@ -161,28 +137,28 @@ export default function App() {
       )}
       {currentTask && (
         <Modal
-        // si isOpen.delete es true entonces se renderiza el modal
+          // si isOpen.delete es true entonces se renderiza el modal
           open={isOpen.delete}
           // se cierra el modal con la X
-          handleClose={()=>handleOpen("delete")}
+          handleClose={() => handleOpen("delete")}
           title="Delete Task">
           <DeleteForm
             currentTask={currentTask}
             handleDeleteTask={handleDeleteTask}
             // se cierra el modal con el boton de cancelar y el estado del is open es false de nuevo
-            handleDeleteCancel={()=>handleOpen("delete")}
+            handleDeleteCancel={() => handleOpen("delete")}
           />
         </Modal>
       )}
       {currentTask && (
         <Modal
           open={isOpen.check}
-          handleClose={()=>handleOpen("check")}
+          handleClose={() => handleOpen("check")}
           title="Mark Check Task">
           <CheckForm
             currentTask={currentTask}
             handleCheckTask={handleCheckTask}
-            handleCheckCancel={()=>handleOpen("check")}
+            handleCheckCancel={() => handleOpen("check")}
           />
         </Modal>
       )}
