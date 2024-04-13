@@ -1,18 +1,17 @@
 
 
 export default function InputTask(props) {
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     const task = {
-      id: props.task.length + 1,
       name: props.task,
       status: 1,
       //fecha de creacion
       createdAt: new Date(),
     };
 
-    props.handleListTask(task);
+    await props.handleListTask(task);
 
   };
 

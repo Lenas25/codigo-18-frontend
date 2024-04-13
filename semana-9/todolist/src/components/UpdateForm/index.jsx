@@ -13,10 +13,10 @@ export default function UpdateForm(props) {
     //es una dependencia que se ejecuta cuando cambia el valor de la tarea
   }, [props.currentTask?.name]);
 
-  const handleSubmitForm = (event) => {
+  const handleSubmitForm = async (event) => {
     event.preventDefault();
     // se ejecuta la funcion que se le pasa por props
-    props.handleSaveEditedTask(props.currentTask, editedTask);
+    await props.handleSaveEditedTask(props.currentTask, editedTask);
   };
 
   return (

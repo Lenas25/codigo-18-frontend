@@ -7,7 +7,7 @@ export default function Modal(props) {
           <div className="bg-white p-5 rounded-md mx-auto w-full max-w-md">
             <div
               className="text-right cursor-pointer"
-              onClick={() => props.setOpenModal(false)}>
+              onClick={props.handleClose}>
               ❌
             </div>
             <div id="modal-title">

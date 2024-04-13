@@ -11,14 +11,14 @@ export default function DeleteForm(props) {
             id="save-edit-task"
             type="button"
             className="bg-red-300 px-3 py-1 rounded-md flex-1"
-            onClick={() => props.setOpenModal(false)}>
+            onClick={props.handleDeleteCancel}>
             No, estoy seguro
           </button>
           <button
             id="save-edit-task"
-            type="submit"
+            type="button"
             className="bg-green-300 px-3 py-1 rounded-md flex-1"
-            onClick={() => props.handleDeleteTask(props.currentTask)}>
+            onClick={async () => await props.handleDeleteTask(props.currentTask)}>
             Si, estoy seguro
           </button>
         </div>

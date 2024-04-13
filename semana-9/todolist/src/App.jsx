@@ -1,78 +1,116 @@
-import { useState } from "react";
-import { InputTask, Modal, UpdateForm, DeleteForm, CheckForm } from "./components";
+import { useState, useEffect } from "react";
+import {
+  InputTask,
+  Modal,
+  UpdateForm,
+  DeleteForm,
+  CheckForm,
+} from "./components";
 import { tasks, saveTaskLocalStorage } from "../utils";
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from "uuid";
+import { getTasks, createTask, updateTask, deleteTask} from "./services/httpAPI";
 
 export default function App() {
   // Es el estado de la lista de tareas
   const [listTasks, setListTask] = useState(tasks);
   // Es el estado del input
   const [task, setTask] = useState("");
-  // Es el estado del modal
-  const [openModal, setOpenModal] = useState(false);
   // creamos una variable para saber a que tarea le dimos click
   const [currentTask, setCurrentTask] = useState(null);
-  const [isOpenDelete, setIsOpenDelete] = useState(false);
-  const [isOpenCheck, setIsOpenCheck] = useState(false);
+  // se crea un estado para saber si el modal esta abierto o cerrado de todos los 3 modales que tenemos e inicializamos en false
+  const [isOpen, setIsOpen] = useState({
+    check: false,
+    edit: false,
+    delete: false,
+  });
+
+  const fetchTasks = async () => {
+    //se utiliza el await para esperar la respuesta de la promesa
+    const tasksData=await getTasks();
+    setListTask(tasksData);
+  }
+
+  //use effect es un hook que se ejecuta cuando el componente se monta, se actualiza o se desmonta, puede ejecutar codigo asincrono y sincrono
+  useEffect(() => {
+    fetchTasks();
+  },[]);
 
   // Funcion que se encarga de capturar el valor del input
   const handleInputTask = (event) => {
     setTask(event.target.value);
   };
 
-  const handleListTask = (task) => {
+  const handleListTask = async (task) => {
     //el id de la tarea es el id de la ultima tarea + 1, una solucion para que no se repitan los id listTasks[listTasks.length-1].id + 1
     // otra solucion es usar un uuid
-    task.id = uuidv4();
-    const newTask = [...listTasks, task];
+    // task.id = uuidv4();
+    const taskAdded = await createTask(task);
+    const newTask = [...listTasks, taskAdded];
     // cuando la funcion terminar recien se va a actualizar el estado
     setListTask(newTask);
-    saveTaskLocalStorage(newTask);
+    // saveTaskLocalStorage(newTask)
     setTask("");
+  };
+
+  const handleCurrentCheckTask = (task) => {
+    setCurrentTask(task);
+    handleOpen("check");
   };
 
   const handleCurrentTask = (task) => {
     //paso 1: abrir el modal
-    setOpenModal(true);
+    handleOpen("edit");
     setCurrentTask(task);
   };
 
-  const handleSaveEditedTask = (task, editedText) => {
+  const handleCurrentDeleteTask = (task) => {
+    setCurrentTask(task);
+    //actualizamos el estado para colocar el modal en true
+    handleOpen("delete");
+  };
+
+  const handleSaveEditedTask = async (task, editedText) => {
     //buscamos la tarea que queremos editar
     //cuando hacemos la busque el searchTask es elemento del listTasks, si altero el searchTask tambien altero el listTasks porque es una referencia a la memoria
     const searchTask = listTasks.find((element) => element.id === task.id);
     //editamos el nombre de la tarea
     searchTask.name = editedText;
 
-    //guardamos en localstorage
-    saveTaskLocalStorage(listTasks);
-    setOpenModal(false);
+    await updateTask(searchTask);
+    handleOpen("edit");
   };
 
-  const handleCheckTask = (task) => {
+  const handleCheckTask = async (task) => {
     //buscamos la tarea que queremos editar
     const searchTask = listTasks.find((element) => element.id === task.id);
     //editamos el estado de la tarea
-    searchTask.status = 3;
-    saveTaskLocalStorage(listTasks);
-    //para volver a renderizar la vista
-    //se renderiza la vista ya que se cambio el estado y cuando se cambia un estado se renderiza la vista
-    setListTask([...listTasks]);
+    searchTask.status = 2;
+    
+    await updateTask(searchTask);
+    handleOpen("check");
+
   };
 
-  const handleCurrentCheckTask = (task) => {
-    setCurrentTask(task);
-    setIsOpenCheck(true);
+  const handleDeleteTask = async (task) => {
+    const filteredTasks=listTasks.filter((t) => t.id !== task.id);
+    // saveTaskLocalStorage(newTasks);
+    await deleteTask(task);
+    setListTask(filteredTasks);
+    //actualizamos el estado para colocar el modal en false y cerrarlo
+    handleOpen("delete");
+
+  };
+
+// en este metodo se abre y cierra los modales con el tipo pasa como propiedad y el cambio de estado se basa en el estado previo
+  const handleOpen = (modalType) => {
+    setIsOpen({
+      ...isOpen,
+      [modalType]: !isOpen[modalType],
+    });
   }
 
-  const handleDeleteTask = (task) => {
-    const newTasks = listTasks.filter((t) => t.id !== task.id);
-    saveTaskLocalStorage(newTasks);
-    setIsOpenDelete(false);
-  };
-
   const handleTaskStatus = (task) => {
-    return task.status === 3 ? (
+    return task.status === 2 ? (
       <>
         <h3 className="line-through font-thin text-gray-500">{task.name}</h3>
       </>
@@ -86,11 +124,6 @@ export default function App() {
         </div>
       </>
     );
-  };
-
-  const handleCurrentDeleteTask = (task) => {
-    setCurrentTask(task);
-    setIsOpenDelete(true);
   };
 
   return (
@@ -109,8 +142,7 @@ export default function App() {
           {listTasks.map((task) => (
             <div
               key={task.id}
-              id="task-${task.id}"
-              className="flex justify-between items-center px-4 py-3 bg-white rounded-lg border border-purple-500">
+              className="flex justify-between items-center px-4 py-3 bg-white rounded-lg border border-purple-500 shadow-md">
               {handleTaskStatus(task)}
             </div>
           ))}
@@ -118,7 +150,9 @@ export default function App() {
       </main>
       {/* si currentTask existe entonces se renderiza el modal */}
       {currentTask && (
-        <Modal open={openModal} setOpenModal={setOpenModal} title="Edit Task">
+        <Modal open={isOpen.edit} 
+        handleClose={()=>handleOpen("edit")} 
+        title="Edit Task">
           <UpdateForm
             currentTask={currentTask}
             handleSaveEditedTask={handleSaveEditedTask}
@@ -127,25 +161,28 @@ export default function App() {
       )}
       {currentTask && (
         <Modal
-          open={isOpenDelete}
-          setOpenModal={setIsOpenDelete}
+        // si isOpen.delete es true entonces se renderiza el modal
+          open={isOpen.delete}
+          // se cierra el modal con la X
+          handleClose={()=>handleOpen("delete")}
           title="Delete Task">
           <DeleteForm
             currentTask={currentTask}
-            setOpenModal={setIsOpenDelete}
             handleDeleteTask={handleDeleteTask}
+            // se cierra el modal con el boton de cancelar y el estado del is open es false de nuevo
+            handleDeleteCancel={()=>handleOpen("delete")}
           />
         </Modal>
       )}
       {currentTask && (
         <Modal
-          open={isOpenCheck}
-          setOpenModal={setIsOpenCheck}
+          open={isOpen.check}
+          handleClose={()=>handleOpen("check")}
           title="Mark Check Task">
           <CheckForm
             currentTask={currentTask}
-            setOpenModal={setIsOpenCheck}
             handleCheckTask={handleCheckTask}
+            handleCheckCancel={()=>handleOpen("check")}
           />
         </Modal>
       )}
