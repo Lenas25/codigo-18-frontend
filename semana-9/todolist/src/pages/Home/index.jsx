@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import {
   InputTask,
   Modal,
@@ -23,8 +22,9 @@ export default function Home() {
   const [task, setTask] = useState("");
   // creamos una variable para saber a que tarea le dimos click
   const [currentTask, setCurrentTask] = useState(null);
-  
   const { isOpen, handleOpen } = useOpenModals();
+
+
 
   // Funcion que se encarga de capturar el valor del input
   const handleInputTask = (event) => {
