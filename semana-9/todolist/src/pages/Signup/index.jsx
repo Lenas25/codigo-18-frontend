@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { TextField } from "../../components";
-import { uploadFile, createUser, updateProfileUser } from "../../services/firebase";
+import { uploadFile } from "../../services/firebase";
+import { createUser, updateProfileUser } from "../../services/auth";
 
 export default function Signup() {
   const [values, setValues] = useState({

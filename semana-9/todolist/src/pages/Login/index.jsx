@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { loginUser } from "../../services/firebase";
+import { loginUser } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { TextField } from "../../components";
+
 export default function Login() {
   const [values, setValues] = useState({ email: "", password: "" });
+  const [error, setError] = useState(null);
+
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -21,8 +24,8 @@ export default function Login() {
     if (logeado) {
       //hacia donde quiero que me redireccione cuando me loguee
       navigate("/");
-    }else{
-      alert("Usuario o contraseña incorrecta")
+    } else {
+      setError("Email or password incorrect");
     }
   };
 
@@ -50,20 +53,21 @@ export default function Login() {
               placeholder="Enter your password"
               name="password"
             />
+            {error && (
+              <p className="text-red-500 text-sm">{error}</p>
+            )}
 
             <div className="my-5">
               <button className="p-3 bg-purple-400 w-full rounded-md text-white font-bold hover:bg-purple-300 transition-all duration-300 ease-in">
                 Log In
               </button>
-              <Link to="/signup">
-                <p className="text-center text-purple-400 mt-5 ">
-                  Do not have an account?{" "}
-                  <Link to="/signup" className="underline">
-                    Sign up here!
-                  </Link>{" "}
-                  🚀
-                </p>
-              </Link>
+              <p className="text-center text-purple-400 mt-5 ">
+                Do not have an account?{" "}
+                <Link to="/signup" className="underline">
+                  Sign up here!
+                </Link>{" "}
+                🚀
+              </p>
             </div>
           </form>
         </div>
