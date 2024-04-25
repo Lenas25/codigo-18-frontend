@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { getCurrentUser } from "../../services/auth";
+import { getCurrentUser, logoutUser } from "../../services/auth";
 
 export default function MainLayout() {
     const [user, setUser] = useState(null);
@@ -15,6 +15,17 @@ export default function MainLayout() {
         navigate("/login");
       }
     };
+
+    const userLogout = async () => {
+      try{
+        await logoutUser();
+        navigate("/login");
+      }catch(error){
+        console.log(error.code);
+        console.log(error.message);
+        return null;
+      }
+    }
   
     useEffect(() => {
       fetchUser();
@@ -40,7 +51,7 @@ export default function MainLayout() {
           <div>
             <button
               className="p-2 bg-purple-400 text-white font-bold rounded-md hover:bg-purple-300 transition-all duration-300 ease-in"
-              onClick={() => navigate("/login")}
+              onClick={() => userLogout()}
             >
               Log Out
             </button>

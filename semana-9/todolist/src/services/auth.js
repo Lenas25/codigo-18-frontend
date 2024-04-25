@@ -3,7 +3,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut
+  signOut, updateProfile
 } from "firebase/auth";
 
 //function to create a user
@@ -59,6 +59,7 @@ export async function updateProfileUser(name, photoURL) {
       displayName: name,
       photoURL: photoURL,
     });
+    return user;
   } catch (error) {
     console.log(error.code);
     console.log(error.message);
@@ -70,7 +71,7 @@ export async function updateProfileUser(name, photoURL) {
 //function to logout the user
 export async function logoutUser() {
   try {
-    //signOut es una funcion de firebase que se encarga de cerrar la sesion del usuario
+    //signOut es una funcion de firebase que se encarga de cerrar la sesion del usuario, esto quiere decir que el current user se va a volver null
     await signOut(auth);
     return true;
   } catch (error) {
