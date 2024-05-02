@@ -4,7 +4,7 @@ import "./App.css";
 //permite entrar a la informacion del store
 import { useSelector, useDispatch } from "react-redux";
 //para usar la funcion se debe importar la funcion que quiero usar del slice
-import { increment, decrement } from "./app/slices/counterSlice";
+import { increment, decrement, setValue } from "./app/slices/counterSlice";
 import Header from "./components/Header";
 
 function App() {
@@ -20,7 +20,9 @@ function App() {
   };
 
   const handleDecrease = () => {
-    dispatch(decrement());
+    if (counter > 0) {
+      dispatch(decrement());
+    }
   }
 
   return (
@@ -39,6 +41,7 @@ function App() {
         <div>
           <button onClick={handleIncrease}>Increase counter</button>
           <button onClick={handleDecrease}>Decrease counter</button>
+          <button onClick={()=>dispatch(setValue(10))}>Boton con valor Custom</button>
         </div>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR

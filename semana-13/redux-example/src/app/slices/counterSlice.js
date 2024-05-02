@@ -15,6 +15,10 @@ const counterSlice = createSlice({
     decrement: (state) => {
         state.value --;
     },
+    //payload es el parametro que recibe la funcion
+    setValue : (state, param) => {
+        state.value = param.payload;
+    }
   },
 });
 
@@ -23,4 +27,4 @@ export const counterSliceReducer = counterSlice.reducer;
 
 
 //para poder exportar las funciones que estan dentro del slice debo usar la propiedar actions
-export const { increment, decrement} = counterSlice.actions;
+export const { increment, decrement, setValue} = counterSlice.actions;
