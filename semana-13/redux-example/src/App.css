@@ -37,6 +37,11 @@
   padding: 2em;
 }
 
+.card div{
+  display: flex;
+  gap:10px;
+}
+
 .read-the-docs {
   color: #888;
 }
