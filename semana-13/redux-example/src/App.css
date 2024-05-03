@@ -45,3 +45,59 @@
 .read-the-docs {
   color: #888;
 }
+
+nav{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user{
+  font-size:25px;
+  font-weight: bold;
+}
+
+ul{
+  list-style-type: none;
+  padding:0;
+  display:flex;
+  justify-content: center;
+  gap:10px;
+  font-weight: 600;
+}
+
+
+input{
+  padding: 10px;
+  font-size: 20px;
+  outline:none;
+  border-radius:20px;
+  border:none;
+}
+
+.add{
+  margin:5px;
+  border-radius:20px;
+}
+
+form{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  gap:10px;
+}
+
+.tasks{
+  display:flex;
+  flex-direction:column;
+}
+
+.tasks>p{
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.error{
+  color:rgba(168, 62, 62, 0.973);
+  font-weight: 600;
+}
