@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  max-height: 100vh;
 }
 
 .logo {
@@ -68,8 +69,8 @@ ul{
 
 
 input{
-  padding: 10px;
-  font-size: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
   outline:none;
   border-radius:20px;
   border:none;
@@ -77,7 +78,6 @@ input{
 
 .add{
   margin:5px;
-  border-radius:20px;
 }
 
 form{
@@ -92,12 +92,41 @@ form{
   flex-direction:column;
 }
 
-.tasks>p{
-  border-bottom: 1px solid white;
-  padding-bottom: 5px;
-}
-
 .error{
   color:rgba(168, 62, 62, 0.973);
   font-weight: 600;
+}
+
+.card>div{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap:30px;
+}
+
+.title-task{
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.tasks>p{
+  border-bottom: 1px solid white;
+  padding:2px 0;
+  padding-bottom: 5px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.tasks>p:hover{
+  background-color: #f1f1f1;
+  color:black;
+}
+.counter{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }

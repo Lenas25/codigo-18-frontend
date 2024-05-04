@@ -10,31 +10,40 @@ export default function Tasks() {
 
   const handleTask = (e) => {
     e.preventDefault();
-    if(inputTask.trim() === "") return setEmptyTask(true);
+    if (inputTask.trim() === "") return setEmptyTask(true);
     setEmptyTask(false);
-    const task ={
-        id: tasks.length + 1,
-        text: inputTask,
-    }
+    const task = {
+      id: tasks.length + 1,
+      text: inputTask,
+    };
     dispatch(addTask(task));
-    setInputTask("");   
-  }
+    setInputTask("");
+  };
 
   return (
     <>
-      <form action="" onSubmit={handleTask}>
-        <input value={inputTask} type="text" onChange={(e)=>setInputTask(e.target.value)} />
-        <button className="add" type="submit" >
-          Add Task
-        </button>
-      </form>
-      <p>List of Tasks</p>
-      <div className="tasks">
-        {tasks.map((task) => (
-          <p key={task.id}>{task.text}</p>
-        ))}
+      <div className="container-tasks">
+        <form action="" onSubmit={handleTask}>
+          <input
+            name = "task"
+            value={inputTask}
+            type="text"
+            onChange={(e) => setInputTask(e.target.value)}
+          />
+          <button className="add" type="submit">
+            Add Task
+          </button>
+        </form>
+        <div>
+          <p className="title-task">List of Tasks</p>
+          <div className="tasks">
+            {tasks.map((task) => (
+              <p className="task-item" key={task.id}>{task.id}. {task.text}</p>
+            ))}
+          </div>
+          {emptyTask && <p className="error">Task cannot be empty</p>}
+        </div>
       </div>
-      {emptyTask && <p className="error">Task cannot be empty</p>}
     </>
   );
 }

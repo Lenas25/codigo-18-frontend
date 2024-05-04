@@ -26,22 +26,36 @@ function App() {
     if (counter > 0) {
       dispatch(decrement());
     }
-  }
+  };
 
   const handleInputValue = (e) => {
-    dispatch(setUserName(e.target.value));  
-  }
+    dispatch(setUserName(e.target.value));
+  };
 
   return (
     <>
       <Header />
-      <h1>- REDUX PRACTICE -</h1>
+      <h1>REDUX PRACTICE</h1>
       <div className="card">
         <div>
-          <button onClick={handleIncrease}>Increase counter</button>
-          <button onClick={handleDecrease}>Decrease counter</button>
-          <button onClick={()=>dispatch(setValue(10))}>Boton con valor Custom</button>
-          <input value={userName} type="text" onChange={handleInputValue} placeholder="Enter your name..."/>
+          <input
+            value={userName}
+            type="text"
+            onChange={handleInputValue}
+            placeholder="Enter your name..."
+          />
+          <div className="counter">
+            <div>
+              <h2>El contador actual es: {counter}</h2>
+            </div>
+            <div>
+              <button onClick={handleIncrease}>Increase counter</button>
+              <button onClick={handleDecrease}>Decrease counter</button>
+              <button onClick={() => dispatch(setValue(10))}>
+                Boton con valor Custom
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <Tasks />
