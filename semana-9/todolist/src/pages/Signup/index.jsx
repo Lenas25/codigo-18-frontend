@@ -29,7 +29,8 @@ export default function Signup() {
     //obtiene el archivo que se subio dependiendo de la referencia con el boton de upload, current se refiere a una propiedad del input
     const file = imageInput.current.files[0];
     const url = await uploadFile(file);
-
+    console.log(file);
+    console.log(url);
     //esto es para crear un usuario, se crea solo con email y password
     await createUser(values.email, values.password);
     //actualizar al usuario con el nombre y la foto

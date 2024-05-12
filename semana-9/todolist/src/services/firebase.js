@@ -27,7 +27,7 @@ export async function uploadFile(file) {
     const snapshot = await uploadBytes(storageRef, file);
     //getDownloadURL es para obtener la url del archivo que se subio
     const url= await getDownloadURL(snapshot.ref);
-
+    console.log(url)
     return url;
 
   }catch(error){
